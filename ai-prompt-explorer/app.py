@@ -333,60 +333,92 @@ div[data-testid="stMainBlockContainer"] > div > div > div[data-testid="column"]:
     }}
 }}
 /* ════════════════════════════════════════════
-   FIX: INPUTS BACK TO WHITE (override dark bleed)
+   FIX: STREAMLIT INPUTS / DROPDOWNS / EXPANDERS
+   Keeps accessibility backgrounds but restores white controls
    ════════════════════════════════════════════ */
 
-/* Selectbox */
-div[data-baseweb="select"] > div {
+/* Selectbox closed field */
+div[data-baseweb="select"] > div {{
     background-color: #ffffff !important;
-    color: #000000 !important;
-}
+    color: #111827 !important;
+    border-color: #cbd5e1 !important;
+}}
 
-/* Dropdown menu */
-div[data-baseweb="popover"] {
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] div,
+div[data-baseweb="select"] input {{
+    color: #111827 !important;
+}}
+
+/* Selectbox dropdown menu */
+div[data-baseweb="popover"],
+div[data-baseweb="popover"] > div,
+ul[data-baseweb="menu"] {{
     background-color: #ffffff !important;
-}
+    color: #111827 !important;
+}}
 
-ul[data-baseweb="menu"] {
+ul[data-baseweb="menu"] li,
+ul[data-baseweb="menu"] li span,
+[data-baseweb="menu"] * {{
     background-color: #ffffff !important;
-}
+    color: #111827 !important;
+}}
 
-/* Text inputs + text areas */
+/* Text areas and text inputs */
 textarea,
 input,
-div[data-testid="stTextArea"] textarea {
+div[data-testid="stTextArea"] textarea,
+div[data-testid="stTextInput"] input {{
     background-color: #ffffff !important;
-    color: #000000 !important;
-}
+    color: #111827 !important;
+    border-color: #cbd5e1 !important;
+}}
 
-/* Checkbox labels */
-div[data-testid="stCheckbox"] {
+textarea::placeholder,
+input::placeholder {{
+    color: #6b7280 !important;
+}}
+
+/* Checkbox and radio areas stay transparent, but text stays readable */
+div[data-testid="stCheckbox"],
+div[data-testid="stCheckbox"] *,
+div[data-testid="stRadio"],
+div[data-testid="stRadio"] * {{
     background-color: transparent !important;
-    color: #000000 !important;
-}
+    color: #111827 !important;
+}}
 
-/* Radio buttons */
-div[data-testid="stRadio"] {
-    background-color: transparent !important;
-    color: #000000 !important;
-}
+/* Checkbox/radio control boxes should stay white inside the border */
+div[data-testid="stCheckbox"] span[data-baseweb="checkbox"] > div,
+div[data-testid="stCheckbox"] label span:first-child,
+div[data-testid="stRadio"] label span:first-child {{
+    background-color: #ffffff !important;
+    border-color: #64748b !important;
+}}
 
-/* Expanders (Display Supports etc.) */
-details {
+/* Expanders such as Display Supports, Word Help, Teacher Tools */
+details,
+div[data-testid="stExpander"] {{
     background-color: #ffffff !important;
     border: 1px solid #dde3ec !important;
     border-radius: 8px !important;
-}
+    color: #111827 !important;
+}}
 
-/* Expander headers */
-summary {
+details summary,
+details summary *,
+div[data-testid="stExpander"] summary,
+div[data-testid="stExpander"] summary * {{
+    background-color: #ffffff !important;
     color: #2c3e50 !important;
-}
+}}
 
 /* Dropdown arrow visibility */
-div[data-baseweb="select"] svg {
+div[data-baseweb="select"] svg {{
     fill: #2c3e50 !important;
-}
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
