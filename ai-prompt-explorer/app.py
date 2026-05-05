@@ -419,6 +419,32 @@ div[data-baseweb="select"] svg {{
     fill: #2c3e50 !important;
 }}
 
+/* ════════════════════════════════════════════
+   FIX: BUTTONS BACK TO WHITE
+   Keeps Streamlit buttons readable on accessibility backgrounds
+   ════════════════════════════════════════════ */
+
+div[data-testid="stButton"] button {{
+    background-color: #ffffff !important;
+    color: #2c3e50 !important;
+    border: 1px solid #dde3ec !important;
+    border-radius: 10px !important;
+    font-weight: 600;
+}}
+
+div[data-testid="stButton"] button:hover {{
+    background-color: #f5f7fa !important;
+    color: #2c3e50 !important;
+    border-color: #cbd5e1 !important;
+}}
+
+div[data-testid="stButton"] button:focus {{
+    background-color: #ffffff !important;
+    color: #2c3e50 !important;
+    border-color: #94a3b8 !important;
+    box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.20) !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
