@@ -1,33 +1,103 @@
-# AI Literacy Prompt Explorer (Grades 6–12)
+# 🤖 AI Literacy Prompt Explorer
 
-This project is an interactive Python-based learning tool designed to help middle and high school students explore key concepts in artificial intelligence, including:
+An interactive AI literacy tool that helps users understand how prompt design influences AI outputs, with a focus on bias awareness, inclusive prompting, and critical thinking.
 
-- Prompt design
-- Bias in AI systems
-- Hallucination and misinformation
-- Responsible AI use
+🔗 **Live App:**  
+https://ai-literacy-prompt-explorer-cdhba95yeweiq7mj8duryh.streamlit.app/
 
-## Purpose
+---
 
-This tool demonstrates how AI literacy can be taught through simple, student-centered interactive experiences. It is designed as a prototype for classroom use aligned with emerging AI and computer science standards.
+## 🎯 Why This Project Matters
 
-## Features
+As AI becomes embedded in education and decision-making, users must understand:
 
-- Student-facing prompt exploration activity
-- Scenario-based learning (real-world contexts)
-- Reflection questions to support critical thinking
-- Teacher-friendly structure for classroom implementation
+- How prompts shape AI responses  
+- How bias can emerge from training data  
+- How to design more inclusive and effective prompts  
 
-## Tech Stack
+This tool bridges the gap between **AI systems and human understanding**.
+
+---
+
+## 🧠 Key Capabilities Demonstrated
+
+- **AI Literacy & Prompt Engineering**
+  - Guides users to refine prompts for clarity, inclusivity, and precision
+
+- **Bias Awareness & Human-Centered Design**
+  - Highlights how AI can reflect patterns from training data
+
+- **Instructional Design**
+  - Scaffolded learning experience with reflection, practice, and feedback
+
+- **Accessibility (UDL-Aligned)**
+  - Adjustable text size and backgrounds for diverse learners
+
+- **Interactive Feedback Systems**
+  - Real-time validation to reinforce learning outcomes
+
+---
+
+## 📷 Application in Action
+
+### 🧠 Real-Time Learning Feedback
+![Quick Check](images/quick-check-feedback.png)  
+*Real-time feedback reinforces how specific, well-structured prompts improve AI outputs.*
+
+---
+
+### ⚖️ Bias & Output Comparison
+![Compare Outputs](images/compare-ai-outputs.png)  
+*Side-by-side comparison demonstrates how inclusive prompts produce more representative results.*
+
+---
+
+### 👓 Accessibility Supports
+![Display Supports](images/display-supports-accessibility.png)  
+*User-controlled accessibility settings support readability and inclusive learning environments.*
+
+---
+
+## 🛠️ Tech Stack
 
 - Python
 - Streamlit
+- Custom CSS for UI/UX enhancements
+- Instructional design frameworks (UDL, scaffolded learning)
 
-## Author
+---
 
-Jennifer Nolan-Johnson  
-Curriculum & Learning Systems Leader transitioning into AI, CS Education, and Cybersecurity
+## 🎓 Design Approach
 
-## Status
+This project integrates:
 
-In development – initial prototype
+- **Learning science principles** (scaffolding, feedback loops)
+- **Human risk awareness** (how people interact with AI systems)
+- **Inclusive design practices**
+- **Real-world application scenarios**
+
+---
+
+## 💼 Relevant Roles This Supports
+
+- AI Governance / Human Risk
+- Security Awareness & Training
+- Instructional Design / Learning & Development
+- EdTech Product Design
+- AI Literacy & Responsible AI Initiatives
+
+---
+
+## 👩‍💻 Author
+
+**Jennifer Nolan**  
+Learning & Development Leader | AI Literacy | Human-Centered Design  
+Developed May 2026
+
+---
+
+## 💡 Key Insight
+
+AI does not "think" — it reflects patterns.
+
+Helping users recognize and reshape those patterns is critical for building more equitable and effective AI systems.
