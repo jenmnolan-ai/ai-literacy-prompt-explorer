@@ -847,7 +847,7 @@ choice = st.selectbox(
         scenario_names,
         help="A scenario is a real-life situation. Pick one to explore how AI might respond to it."
     )
-    selected = next(s for s in scenarios if s["scenario"] == choice)
+selected = next(s for s in scenarios if s["scenario"] == choice)
 
 
 
