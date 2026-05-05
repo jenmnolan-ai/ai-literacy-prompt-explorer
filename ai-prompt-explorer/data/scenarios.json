@@ -1,0 +1,218 @@
+[
+  {
+    "scenario": "Video Game Character Design",
+    "prompt": "Create a main character for a popular video game hero",
+    "issue": "AI may default to stereotypical gender, race, or ability traits based on past data",
+    "training_data": "AI may have seen thousands of popular game characters, movies, and online images where heroes often look the same. When a prompt is vague, AI repeats the most common patterns it has seen — instead of exploring more creative or inclusive possibilities.",
+    "learn_more": {
+      "ai_might": "AI trained on popular games often defaults to a male, muscular, non-disabled, white hero because that is what appears most in past game data.",
+      "why_problem": "When games only show one type of hero, it sends the message that only some people get to be the main character. Players who don't see themselves represented can feel left out or less important.",
+      "try_instead": "Create a hero of any gender with a non-traditional body type, diverse cultural background, and unique abilities — including characters who use assistive technology or have different ways of moving through the world.",
+      "think_about": "Who is missing from most games you have played? What would change if the hero looked more like your community?"
+    },
+    "compare": {
+      "typical_label": "🦸‍♂️ Typical AI Output",
+      "typical_text": "A tall, muscular male warrior with heavy armor and a giant sword. He has short brown hair and no visible disabilities.",
+      "improved_label": "🦸🏽‍♀️♿🦾 Improved AI Output",
+      "improved_text": "A powerful hero of any gender — with a unique body type, short hair, adaptive technology like a prosthetic limb, and strengths beyond fighting: strategy, community-building, and creative problem-solving."
+    }
+  },
+  {
+    "scenario": "School Dress Code",
+    "prompt": "Write rules for appropriate student clothing",
+    "issue": "Rules may unfairly target certain genders, cultures, or body types",
+    "training_data": "AI may have learned from many existing dress codes that focus more on some students' clothing than others. It may also have seen less information about cultural or religious garments being protected and important, because that content appears less often in training data.",
+    "learn_more": {
+      "ai_might": "AI may generate dress code rules that focus heavily on girls' clothing or ban cultural items like hijabs, turbans, or traditional garments — because many existing dress codes do the same.",
+      "why_problem": "Rules that single out certain genders or cultural dress can make students feel disrespected or unwelcome. They may also force students to choose between their identity and following school rules.",
+      "try_instead": "Write dress code rules that apply equally to all genders and respect students' cultural and religious clothing. Include a reason for each rule so students understand the purpose.",
+      "think_about": "Have you ever seen a school rule that felt fair to some students but not others? What made it feel that way?"
+    },
+    "compare": {
+      "typical_label": "📋 Typical AI Output",
+      "typical_text": "No skirts above the knee. No exposed shoulders or midriffs. Hats and head coverings are not allowed. Students must wear solid-color tops.",
+      "improved_label": "🤝🌍 Improved AI Output",
+      "improved_text": "Clothing rules apply equally to all students regardless of gender. Cultural and religious garments are always welcome. Each rule includes the reason behind it and was reviewed with student input."
+    }
+  },
+  {
+    "scenario": "Sneaker Brand Marketing",
+    "prompt": "Create an ad for the most popular sneakers for teenagers",
+    "issue": "AI may reinforce trends that exclude certain groups or promote status-based bias",
+    "training_data": "AI may have learned from millions of ads that link popular products to specific looks, lifestyles, and body types. It repeats these patterns because they were the most common examples in its training — not because they represent every kind of customer.",
+    "learn_more": {
+      "ai_might": "AI may create ads that show only certain body types, skin tones, or lifestyles — often matching expensive, high-status brands that not all students can afford.",
+      "why_problem": "When ads only show certain kinds of people or link worth to expensive products, it can make students who can't afford those things feel excluded or less valued.",
+      "try_instead": "Create an ad for sneakers that celebrates students from all backgrounds, income levels, body types, and styles — showing that the shoes work for everyone, not just one type of person.",
+      "think_about": "Who is usually shown in sneaker ads? Who is left out? How might that affect how students feel about themselves?"
+    },
+    "compare": {
+      "typical_label": "👟💰 Typical AI Output",
+      "typical_text": "A group of slim, stylish teens wearing $200 sneakers at a rooftop party. The tagline: 'Only the best wear these.'",
+      "improved_label": "👟🌎✨ Improved AI Output",
+      "improved_text": "Students from different backgrounds, body types, and abilities wearing the same shoe — on a court, in a wheelchair, at a bus stop, at an art class. Tagline: 'Made for every step you take.'"
+    }
+  },
+  {
+    "scenario": "Music Recommendation System",
+    "prompt": "Recommend music that all teenagers would enjoy",
+    "issue": "AI may ignore diverse cultures, languages, and individual identity preferences",
+    "training_data": "AI may have learned from streaming platforms and playlists dominated by English-language content from a small number of countries. Music from other cultures and languages appears far less often in training data, so AI may treat it as less important or less popular.",
+    "learn_more": {
+      "ai_might": "AI trained on popular streaming data may mostly recommend English-language pop and hip-hop, ignoring music from Latin America, West Africa, South Asia, the Middle East, and other regions.",
+      "why_problem": "When a tool assumes all teenagers like the same music, it erases the real diversity of students' backgrounds, languages, and identities. Students whose music is ignored may feel unseen.",
+      "try_instead": "Recommend music that includes different languages, cultural traditions, and a variety of moods and styles — and ask the student first about their own preferences and background.",
+      "think_about": "What kind of music might an AI miss if it only learned from American radio stations? Whose music gets counted as normal?"
+    },
+    "compare": {
+      "typical_label": "🎵 Typical AI Output",
+      "typical_text": "Top 10 pop songs in English from the Billboard Hot 100. Mostly one genre, one language, from a handful of countries.",
+      "improved_label": "🎵🌍🎶 Improved AI Output",
+      "improved_text": "A playlist with music in Spanish, Hindi, Arabic, and Yoruba — including genres like Afrobeats, K-pop, cumbia, and folk — chosen based on what this student actually listens to and loves."
+    }
+  },
+  {
+    "scenario": "School Discipline",
+    "prompt": "Describe a disruptive student in class",
+    "issue": "AI may reflect bias in how behavior is described across race, gender, or disability",
+    "training_data": "AI may have learned from historical school records where students from some groups were more often described with harsher language. AI can repeat these patterns without knowing they are unfair — because they appear so often in the records it learned from.",
+    "learn_more": {
+      "ai_might": "Research shows that the same behavior is often described differently depending on a student's race or disability status. AI trained on school records can repeat these patterns — describing some students as more threatening or intentionally disruptive.",
+      "why_problem": "When AI reflects these biases, it can lead to unfair discipline decisions. Students who are already more likely to be punished may face even more consequences when AI is involved.",
+      "try_instead": "Describe a student who seems distracted or is having a hard time in class, without making assumptions about who they are, why they are acting that way, or what their intentions might be.",
+      "think_about": "Could the way we describe a student's behavior change how they are treated? How might the same action be described differently depending on who the student is?"
+    },
+    "compare": {
+      "typical_label": "😠 Typical AI Output",
+      "typical_text": "The student was being aggressive, defiant, and threatening to other students. He refused to follow instructions and disrupted the entire class.",
+      "improved_label": "😟💭 Improved AI Output",
+      "improved_text": "The student seemed frustrated and had difficulty staying focused. They got up from their seat several times and struggled to engage with the activity. They may benefit from additional support."
+    }
+  },
+  {
+    "scenario": "Access to Technology",
+    "prompt": "Design a homework system that requires internet and devices",
+    "issue": "AI may ignore inequities in access to technology and internet at home",
+    "training_data": "AI may have learned from school materials, lesson plans, and websites that assume students have reliable internet and devices at home. Situations where students lack access appear less often in the online content AI is trained on, so AI may not think to include them.",
+    "learn_more": {
+      "ai_might": "AI may assume all students have fast home internet and personal devices, because much of the data it learns from comes from schools or homes where technology is available.",
+      "why_problem": "Millions of students do not have reliable internet or devices at home. A homework system that requires them leaves those students behind, punishing them for something they cannot control.",
+      "try_instead": "Design a homework system with options for students with or without internet, including ways to complete work offline, at school, or at a public library.",
+      "think_about": "What happens to a student without internet at home when their homework has to be done online? Is that fair? Who decides what counts as a fair assignment?"
+    },
+    "compare": {
+      "typical_label": "💻 Typical AI Output",
+      "typical_text": "Submit your homework online by midnight using the school portal. Watch the video lesson, complete the interactive quiz, and upload your document.",
+      "improved_label": "💻📚🏫 Improved AI Output",
+      "improved_text": "This assignment can be completed online, on paper, or at school before or after class. Students without internet at home may use the library or pick up a printed version from the office."
+    }
+  },
+  {
+    "scenario": "Student Voice in School Decisions",
+    "prompt": "Write a plan for improving school rules",
+    "issue": "AI may exclude student voice or prioritize adult perspectives only",
+    "training_data": "AI may have learned from official school documents, policy guides, and administrator handbooks that focus on adult decision-making. Student perspectives appear less often in formal written documents that AI learns from — so AI may not think to include them.",
+    "learn_more": {
+      "ai_might": "AI may generate a school improvement plan written entirely from an adult or administrative point of view — focusing on order, efficiency, and test scores — without ever asking what students think or need.",
+      "why_problem": "When students are left out of decisions that affect their lives, the rules often miss what actually matters to them. This can lead to policies that feel unfair or disconnected from real student experiences.",
+      "try_instead": "Write a school improvement plan that includes student surveys, student-led discussions, and student representatives in decision-making meetings alongside teachers and administrators.",
+      "think_about": "If students aren't part of making school rules, whose needs get included? What might adults miss that students would know?"
+    },
+    "compare": {
+      "typical_label": "🧑‍🏫📋 Typical AI Output",
+      "typical_text": "Administrators review the current policy. Teachers submit suggestions. The principal approves final changes. Students are informed of new rules at the start of the year.",
+      "improved_label": "🧑‍🎓🧑‍🏫🤝 Improved AI Output",
+      "improved_text": "Students complete an anonymous survey. A student council reviews the results alongside teachers. A joint committee — including students, families, and staff — drafts new rules together and explains the reasoning."
+    }
+  },
+  {
+    "scenario": "Environmental Impact (NGSS)",
+    "prompt": "Suggest ways students can help the environment",
+    "issue": "AI may ignore community differences, access to resources, or local environmental challenges",
+    "training_data": "AI may have learned from news articles, websites, and reports that focus on expensive or high-tech environmental solutions. Low-cost, community-based approaches are discussed less often online, so AI may not suggest them as readily.",
+    "learn_more": {
+      "ai_might": "AI may suggest solutions like buying solar panels, installing electric car chargers, or shopping at farmers markets — options that require money and may not exist in all neighborhoods.",
+      "why_problem": "Environmental solutions that only work for wealthy communities ignore the fact that low-income and rural communities often face the biggest environmental problems with the fewest resources to solve them.",
+      "try_instead": "Suggest ways students can help the environment using free or low-cost actions that work in different neighborhoods — including urban, rural, and communities with fewer resources.",
+      "think_about": "Why might some environmental solutions work in one neighborhood but not another? Who gets to decide which communities get clean air, clean water, and green spaces?"
+    },
+    "compare": {
+      "typical_label": "☀️🚗 Typical AI Output",
+      "typical_text": "Install solar panels on your roof. Buy an electric car. Shop at organic farmers markets. Switch to energy-efficient appliances.",
+      "improved_label": "🌱🌍✊ Improved AI Output",
+      "improved_text": "Start a school garden with free seeds. Organize a neighborhood cleanup. Advocate for a local park. Reduce food waste in the cafeteria. Write to local leaders about pollution in your area — actions anyone can take."
+    }
+  },
+  {
+    "scenario": "Coding & AI Systems",
+    "prompt": "Design an AI system to help students learn faster",
+    "issue": "AI may prioritize efficiency over equity, ignoring different learning needs and styles",
+    "training_data": "AI may have learned from software design guides and educational research that measure success through speed and test scores. Research about equity in learning tools or the needs of students who learn differently appears far less often in those sources.",
+    "learn_more": {
+      "ai_might": "AI may design a learning tool focused on speed and standardized test results — rewarding students who learn quickly in one style while leaving behind students who need more time, different approaches, or support for disabilities.",
+      "why_problem": "Learning is not one-size-fits-all. Students have different abilities, languages, learning styles, and life circumstances. A system built only for speed can widen the gap between students who have advantages and those who don't.",
+      "try_instead": "Design an AI learning tool that adjusts to different learning styles, home languages, and abilities — measuring growth, not just speed — and that checks in on student wellbeing, not just test performance.",
+      "think_about": "Should a learning tool treat all students the same way? What would it look like to design a tool that was truly fair to every kind of learner?"
+    },
+    "compare": {
+      "typical_label": "📊⏱️ Typical AI Output",
+      "typical_text": "Students complete timed quizzes. The AI ranks them by speed and accuracy. Slower students receive remedial content. Top scorers move to advanced material.",
+      "improved_label": "🧠🌐❤️ Improved AI Output",
+      "improved_text": "The AI adjusts to each student's pace, learning style, and home language. It measures growth over time — not just test scores — and checks in on how the student is feeling, not just how fast they are moving."
+    }
+  },
+  {
+    "scenario": "Disability & Accessibility",
+    "prompt": "Design a classroom for all students",
+    "issue": "AI may overlook accessibility needs or assume all students learn the same way",
+    "training_data": "AI may have learned from photos, design guides, and architectural examples where most classrooms look the same — rows of desks, a whiteboard at the front, no accessibility features. Spaces designed for students with different needs appear far less often in that training data.",
+    "learn_more": {
+      "ai_might": "AI may generate a classroom design with rows of desks, a front whiteboard, and no mention of ramps, wide aisles, sensory spaces, hearing loops, or flexible seating — because many classrooms in its training data look that way.",
+      "why_problem": "When accessibility is not built in from the start, students with physical, sensory, or learning differences are forced to adapt to a space that was not designed for them. This sends the message that they were an afterthought.",
+      "try_instead": "Design a classroom where every student — including those who use wheelchairs, have sensory sensitivities, or learn differently — can fully participate from the start, with flexible seating, multiple ways to engage, and clear pathways.",
+      "think_about": "What would a classroom look like if every student's needs were included from the very beginning — not added on later? Who benefits when spaces are designed for everyone?"
+    },
+    "compare": {
+      "typical_label": "🪑🖥️ Typical AI Output",
+      "typical_text": "30 desks in rows facing a whiteboard. A teacher's desk at the front. Posters on the wall. One projector screen.",
+      "improved_label": "🦽🎧🌟 Improved AI Output",
+      "improved_text": "Flexible seating including chairs, stools, and floor cushions. Wide pathways for wheelchair access. A quiet corner with noise-reducing headphones. Multiple screens. Fidget tools available. Both visual and audio instructions offered."
+    }
+  },
+  {
+    "scenario": "Social Media Trends",
+    "prompt": "Describe what makes someone popular online",
+    "issue": "AI may reinforce harmful stereotypes or unrealistic standards",
+    "training_data": "AI may have learned from popular social media platforms where attention is rewarded by algorithms that favor certain looks and lifestyles. Less-visible communities and other forms of influence are underrepresented in that data, so AI may not think to include them.",
+    "learn_more": {
+      "ai_might": "AI may describe online popularity in terms of follower counts, physical appearance, wealth, or a specific lifestyle — because that is what gets amplified most often on mainstream social media platforms.",
+      "why_problem": "When AI ties popularity to looks or money, it reinforces standards that most students cannot and should not have to meet. This can damage self-image and make students feel like they don't belong unless they look or act a certain way.",
+      "try_instead": "Describe what makes someone influential online in a way that includes kindness, creativity, humor, honesty, and connections across different communities — not just followers or appearance.",
+      "think_about": "Who tends to get the most attention online? Who gets ignored? What would social media look like if different things were valued?"
+    },
+    "compare": {
+      "typical_label": "📱👀💰 Typical AI Output",
+      "typical_text": "Popular people online have millions of followers, look attractive, wear trendy clothes, travel to exciting places, and always seem happy and successful.",
+      "improved_label": "🎨💬🌍 Improved AI Output",
+      "improved_text": "Influential people online come in all forms: a teen teaching sign language, an artist sharing their culture, a student organizing their community, someone telling honest stories about their real life."
+    }
+  },
+  {
+    "scenario": "Fairness in School Rules",
+    "prompt": "Create rules that are fair for all students",
+    "issue": "AI may define fairness in a way that does not account for equity or different needs",
+    "training_data": "AI may have learned from policy documents and legal texts that define fairness as treating everyone exactly the same. The idea of equity — giving people what they actually need — appears far less often in formal rule-making texts, so AI may overlook it.",
+    "learn_more": {
+      "ai_might": "AI may interpret fairness as treating every student exactly the same — giving everyone identical rules, resources, and consequences — even though students come from very different circumstances.",
+      "why_problem": "Treating everyone the same is not always fair. A student without quiet space at home needs different homework support than one who has their own room and a desk. Equity means giving each student what they actually need.",
+      "try_instead": "Create school rules that account for different student needs, abilities, home situations, and backgrounds — where fairness means everyone gets what they need to succeed, not just the same thing.",
+      "think_about": "What is the difference between treating everyone the same and treating everyone fairly? Can you think of a time when equal treatment actually made things less fair?"
+    },
+    "compare": {
+      "typical_label": "⚖️ Typical AI Output",
+      "typical_text": "All students receive the same rules, the same deadlines, the same consequences, and the same amount of support — because that is what is fair.",
+      "improved_label": "🏫❤️🤝 Improved AI Output",
+      "improved_text": "Rules are the same for everyone, but support is adjusted to what each student needs. A student experiencing a hard week at home gets a deadline extension. A student with a disability gets extra time. Fairness means everyone can succeed."
+    }
+  }
+]
