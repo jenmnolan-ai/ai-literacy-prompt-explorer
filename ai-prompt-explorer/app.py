@@ -109,11 +109,27 @@ section[data-testid="stMain"] {{
    ════════════════════════════════════════════ */
 div[data-testid="stMainBlockContainer"] {{
     background: {bg_color} !important;
+    color: #111827 !important;
     border-radius: 16px;
     box-shadow: 0 2px 18px rgba(0,0,0,0.08);
     padding: 28px 36px 48px 36px !important;
     max-width: 1180px !important;
     margin: 16px auto 24px auto !important;
+}}
+
+/* Force readable dark text inside the light accessibility backgrounds. */
+div[data-testid="stMainBlockContainer"] p,
+div[data-testid="stMainBlockContainer"] li,
+div[data-testid="stMainBlockContainer"] label,
+div[data-testid="stMainBlockContainer"] span,
+div[data-testid="stMainBlockContainer"] div:not([role="banner"]):not([role="banner"] *) {{
+    color: #111827;
+}}
+
+/* Keep the dark banner text intentionally white/light. */
+div[role="banner"],
+div[role="banner"] * {{
+    color: inherit;
 }}
 
 /* Left column is transparent — card color shows through */
