@@ -835,15 +835,14 @@ with col_main:
     }
 
     # Load scenarios
-    from pathlib import Path
-
+from pathlib import Path
 SCENARIOS_PATH = Path(__file__).parent / "data" / "scenarios.json"
 
 with open(SCENARIOS_PATH, "r", encoding="utf-8") as f:
-        scenarios = json.load(f)
+    scenarios = json.load(f)
 
-    scenario_names = [s["scenario"] for s in scenarios]
-    choice = st.selectbox(
+scenario_names = [s["scenario"] for s in scenarios]
+choice = st.selectbox(
         "Choose a scenario:",
         scenario_names,
         help="A scenario is a real-life situation. Pick one to explore how AI might respond to it."
