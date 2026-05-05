@@ -402,7 +402,7 @@ div[data-testid="stRadio"] p {{
 /* Keep radio/checkbox circles visible instead of flattening them into plain text. */
 div[data-testid="stRadio"] input,
 div[data-testid="stCheckbox"] input {{
-    accent-color: #ff4b4b !important;
+    accent-color: #111827 !important;
 }}
 
 /* Expanders such as Display Supports, Word Help, Teacher Tools */
@@ -667,6 +667,140 @@ div[data-testid="stRadio"] label:has(input:checked) span:first-child * {{
 /* Keep keyboard focus visible without relying on red. */
 div[data-testid="stCheckbox"] label:focus-within span:first-child,
 div[data-testid="stRadio"] label:focus-within span:first-child {{
+    outline: 2px solid #111827 !important;
+    outline-offset: 2px !important;
+}}
+
+
+
+/* ════════════════════════════════════════════
+   FINAL APP-STYLE CONTROL OVERRIDES
+   White before selection, black after selection, thicker borders.
+   Placed last so it wins over earlier Streamlit/BaseWeb defaults.
+   ════════════════════════════════════════════ */
+
+/* Remove any remaining red accent behavior from native controls. */
+div[data-testid="stRadio"] input,
+div[data-testid="stCheckbox"] input {{
+    accent-color: #111827 !important;
+}}
+
+/* App-like spacing and hover treatment for option rows. */
+div[data-testid="stRadio"] label,
+div[data-testid="stCheckbox"] label {{
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 6px 6px !important;
+    border-radius: 8px !important;
+    transition: background-color 0.15s ease, outline-color 0.15s ease !important;
+}}
+
+div[data-testid="stRadio"] label:hover,
+div[data-testid="stCheckbox"] label:hover {{
+    background-color: #f8fafc !important;
+}}
+
+/* Stronger readable label text. */
+div[data-testid="stRadio"] label p,
+div[data-testid="stCheckbox"] label p {{
+    color: #111827 !important;
+    font-weight: 500 !important;
+}}
+
+/* Native radio buttons: white before selected, black after selected. */
+div[data-testid="stRadio"] input[type="radio"] {{
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    border: 3px solid #374151 !important;
+    border-radius: 50% !important;
+    background: #ffffff !important;
+    display: inline-grid !important;
+    place-content: center !important;
+    margin: 0 8px 0 0 !important;
+}}
+
+div[data-testid="stRadio"] input[type="radio"]:checked {{
+    border: 6px solid #111827 !important;
+    background: #ffffff !important;
+}}
+
+/* Native checkboxes: white before selected, black after selected. */
+div[data-testid="stCheckbox"] input[type="checkbox"] {{
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    border: 3px solid #374151 !important;
+    border-radius: 5px !important;
+    background: #ffffff !important;
+    display: inline-grid !important;
+    place-content: center !important;
+    margin: 0 8px 0 0 !important;
+}}
+
+div[data-testid="stCheckbox"] input[type="checkbox"]:checked {{
+    background-color: #111827 !important;
+    border-color: #111827 !important;
+}}
+
+div[data-testid="stCheckbox"] input[type="checkbox"]:checked::after {{
+    content: "✓";
+    color: #ffffff !important;
+    font-size: 15px !important;
+    line-height: 1 !important;
+    font-weight: 800 !important;
+}}
+
+/* BaseWeb fallback: unselected visual controls are white with darker, thicker borders. */
+div[data-testid="stRadio"] label span:first-child,
+div[data-testid="stCheckbox"] label span:first-child,
+div[data-testid="stRadio"] [data-baseweb="radio"] > div:first-child,
+div[data-testid="stCheckbox"] [data-baseweb="checkbox"] > div:first-child {{
+    background-color: #ffffff !important;
+    border: 3px solid #374151 !important;
+    color: #111827 !important;
+}}
+
+/* Radio should remain circular; checkbox should remain square-ish. */
+div[data-testid="stRadio"] label span:first-child,
+div[data-testid="stRadio"] [data-baseweb="radio"] > div:first-child {{
+    border-radius: 50% !important;
+}}
+
+div[data-testid="stCheckbox"] label span:first-child,
+div[data-testid="stCheckbox"] [data-baseweb="checkbox"] > div:first-child {{
+    border-radius: 5px !important;
+}}
+
+/* Selected BaseWeb fallback: black selected state, no red. */
+div[data-testid="stRadio"] label:has(input:checked) span:first-child,
+div[data-testid="stCheckbox"] label:has(input:checked) span:first-child,
+div[data-testid="stRadio"] label:has(input:checked) [data-baseweb="radio"] > div:first-child,
+div[data-testid="stCheckbox"] label:has(input:checked) [data-baseweb="checkbox"] > div:first-child {{
+    background-color: #111827 !important;
+    border-color: #111827 !important;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}}
+
+/* Keep selected icons/marks white on black. */
+div[data-testid="stRadio"] label:has(input:checked) span:first-child *,
+div[data-testid="stCheckbox"] label:has(input:checked) span:first-child *,
+div[data-testid="stRadio"] label:has(input:checked) svg,
+div[data-testid="stCheckbox"] label:has(input:checked) svg {{
+    color: #ffffff !important;
+    fill: #ffffff !important;
+    background-color: transparent !important;
+}}
+
+/* Keyboard focus is visible and high contrast. */
+div[data-testid="stRadio"] label:focus-within,
+div[data-testid="stCheckbox"] label:focus-within {{
     outline: 2px solid #111827 !important;
     outline-offset: 2px !important;
 }}
@@ -1416,7 +1550,7 @@ with col_main:
 
     # ── Improve the Prompt ────────────────────────────────────────
     st.markdown("---")
-    st.markdown("### 📝 Improve the Prompt")
+    st.markdown("### Your Turn")
     st.markdown("**How can you improve this prompt?** *(Choose all that apply)*")
 
     imp_detail   = st.checkbox("Add more detail",                              key=f"imp_detail_{sk}")
