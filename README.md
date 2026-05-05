@@ -3,7 +3,7 @@
 🔗 **Live App:** https://ai-literacy-prompt-explorer-cdhba95yeweiq7mj8duryh.streamlit.app/
 
 <p align="center">
-  <img src="compare-ai-outputs.png" width="600"/>
+  <img src="compare-ai-outputs.png" width="540"/>
 </p>
 
 <p align="center"><em>How prompt design shapes AI outcomes - and why it matters.</em></p>
@@ -43,7 +43,7 @@ Each scenario highlights how bias can emerge in AI outputs.
 ### 🧪 Quick Check with Immediate Feedback
 
 <p align="center">
-  <img src="quick-check-feedback.png" width="500"/>
+  <img src="quick-check-feedback.png" width="460"/>
 </p>
 
 <p align="center"><em>Real-time formative feedback reinforces understanding of prompt quality and AI bias.</em></p>
@@ -55,7 +55,7 @@ Students receive instant feedback with explanations, supporting learning without
 ### 🔍 Compare AI Outputs
 
 <p align="center">
-  <img src="compare-ai-outputs.png" width="560"/>
+  <img src="compare-ai-outputs.png" width="520"/>
 </p>
 
 <p align="center"><em>Side-by-side comparison shows how inclusive, specific prompts produce more equitable AI outputs.</em></p>
@@ -67,7 +67,7 @@ Users can clearly see the difference between a vague, biased prompt and an impro
 ### ♿ Accessibility & Display Supports
 
 <p align="center">
-  <img src="display-supports-accessibility.png" width="400"/>
+  <img src="display-supports-accessibility.png" width="380"/>
 </p>
 
 <p align="center"><em>Adjustable text size and background settings support accessibility and diverse learner needs.</em></p>
