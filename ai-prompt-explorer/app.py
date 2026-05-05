@@ -947,6 +947,101 @@ div[data-testid="stCheckbox"] input[type="checkbox"]:focus-visible {{
     outline-offset: 3px !important;
 }}
 
+
+/* ════════════════════════════════════════════
+   DISPLAY SUPPORTS FIX ONLY
+   Removes boxes around group labels and makes the preference choices
+   look like clean checkbox-style options: white background, dark border,
+   black checkmark when selected, no red.
+   ════════════════════════════════════════════ */
+
+/* No boxed outline around "Text Size" or "Background" labels */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label *,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > div > label,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > div > label * {{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}}
+
+/* Keep the group labels readable and natural */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label p {{
+    font-weight: 500 !important;
+    color: #111827 !important;
+    margin-bottom: 0.25rem !important;
+}}
+
+/* Clean option rows */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] label:has(input[type="radio"]) {{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    padding: 5px 6px !important;
+    border-radius: 8px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}}
+
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] label:has(input[type="radio"]):hover {{
+    background-color: #f8fafc !important;
+}}
+
+/* Display Supports radios appear as checkbox-style controls */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"] {{
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    border: 3px solid #374151 !important;
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    display: inline-grid !important;
+    place-content: center !important;
+    margin: 0 10px 0 0 !important;
+    box-shadow: none !important;
+    accent-color: #111827 !important;
+}}
+
+/* Selected Display Supports choice: white inside with black checkmark */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]:checked {{
+    background-color: #ffffff !important;
+    border-color: #111827 !important;
+    box-shadow: none !important;
+}}
+
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]:checked::before {{
+    content: "✓" !important;
+    color: #111827 !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    font-weight: 900 !important;
+    display: block !important;
+    transform: translateY(-1px) !important;
+}}
+
+/* Prevent older BaseWeb/Streamlit layers from adding red or hiding the checkbox-style input */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] label:has(input[type="radio"]) svg,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] label:has(input[type="radio"]) [data-baseweb] {{
+    color: #111827 !important;
+    fill: #111827 !important;
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}}
+
+/* Keyboard focus on the actual choice box only */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]:focus-visible {{
+    outline: 3px solid #111827 !important;
+    outline-offset: 3px !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
