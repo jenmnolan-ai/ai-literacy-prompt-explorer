@@ -332,6 +332,61 @@ div[data-testid="stMainBlockContainer"] > div > div > div[data-testid="column"]:
         border-radius: 10px;
     }}
 }}
+/* ════════════════════════════════════════════
+   FIX: INPUTS BACK TO WHITE (override dark bleed)
+   ════════════════════════════════════════════ */
+
+/* Selectbox */
+div[data-baseweb="select"] > div {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Dropdown menu */
+div[data-baseweb="popover"] {
+    background-color: #ffffff !important;
+}
+
+ul[data-baseweb="menu"] {
+    background-color: #ffffff !important;
+}
+
+/* Text inputs + text areas */
+textarea,
+input,
+div[data-testid="stTextArea"] textarea {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}
+
+/* Checkbox labels */
+div[data-testid="stCheckbox"] {
+    background-color: transparent !important;
+    color: #000000 !important;
+}
+
+/* Radio buttons */
+div[data-testid="stRadio"] {
+    background-color: transparent !important;
+    color: #000000 !important;
+}
+
+/* Expanders (Display Supports etc.) */
+details {
+    background-color: #ffffff !important;
+    border: 1px solid #dde3ec !important;
+    border-radius: 8px !important;
+}
+
+/* Expander headers */
+summary {
+    color: #2c3e50 !important;
+}
+
+/* Dropdown arrow visibility */
+div[data-baseweb="select"] svg {
+    fill: #2c3e50 !important;
+}
 </style>
 """, unsafe_allow_html=True)
 
