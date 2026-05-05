@@ -835,7 +835,11 @@ with col_main:
     }
 
     # Load scenarios
-    with open("data/scenarios.json") as f:
+    from pathlib import Path
+
+SCENARIOS_PATH = Path(__file__).parent / "data" / "scenarios.json"
+
+with open(SCENARIOS_PATH, "r", encoding="utf-8") as f:
         scenarios = json.load(f)
 
     scenario_names = [s["scenario"] for s in scenarios]
