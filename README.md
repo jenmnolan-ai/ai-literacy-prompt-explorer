@@ -1,103 +1,139 @@
-# 🤖 AI Literacy Prompt Explorer
+## 🚀 AI Literacy Prompt Explorer
 
-An interactive AI literacy tool that helps users understand how prompt design influences AI outputs, with a focus on bias awareness, inclusive prompting, and critical thinking.
+🔗 Live App: https://ai-literacy-prompt-explorer-cdhba95yeweiq7mj8duryh.streamlit.app/
 
-🔗 **Live App:**  
-https://ai-literacy-prompt-explorer-cdhba95yeweiq7mj8duryh.streamlit.app/
-
----
-
-## 🎯 Why This Project Matters
-
-As AI becomes embedded in education and decision-making, users must understand:
-
-- How prompts shape AI responses  
-- How bias can emerge from training data  
-- How to design more inclusive and effective prompts  
-
-This tool bridges the gap between **AI systems and human understanding**.
+An interactive learning tool designed to help students and educators explore how AI responses are shaped by prompts - and how bias, assumptions, and missing perspectives can influence outputs.
 
 ---
 
-## 🧠 Key Capabilities Demonstrated
+## 💡 Overview
 
-- **AI Literacy & Prompt Engineering**
-  - Guides users to refine prompts for clarity, inclusivity, and precision
+The **AI Literacy Prompt Explorer** helps users:
 
-- **Bias Awareness & Human-Centered Design**
-  - Highlights how AI can reflect patterns from training data
+* Understand how prompt quality impacts AI responses
+* Identify bias and incomplete outputs
+* Practice improving prompts for fairness, specificity, and inclusion
+* Build critical thinking skills around AI-generated content
 
-- **Instructional Design**
-  - Scaffolded learning experience with reflection, practice, and feedback
-
-- **Accessibility (UDL-Aligned)**
-  - Adjustable text size and backgrounds for diverse learners
-
-- **Interactive Feedback Systems**
-  - Real-time validation to reinforce learning outcomes
+This tool is designed for **classroom use, professional development, and digital literacy instruction**.
 
 ---
 
-## 📷 Application in Action
+## 🧠 Key Features
 
-### 🧠 Real-Time Learning Feedback
-![Quick Check](images/quick-check-feedback.png)  
-*Real-time feedback reinforces how specific, well-structured prompts improve AI outputs.*
+### 🎯 Scenario-Based Learning
 
----
+Users explore real-world contexts such as:
 
-### ⚖️ Bias & Output Comparison
-![Compare Outputs](images/compare-ai-outputs.png)  
-*Side-by-side comparison demonstrates how inclusive prompts produce more representative results.*
+* Video game character design
+* School policies
+* Technology access
+* AI recommendation systems
 
----
-
-### 👓 Accessibility Supports
-![Display Supports](images/display-supports-accessibility.png)  
-*User-controlled accessibility settings support readability and inclusive learning environments.*
+Each scenario highlights how bias can emerge in AI outputs.
 
 ---
 
-## 🛠️ Tech Stack
+### 🧪 Quick Check (Immediate Feedback)
 
-- Python
-- Streamlit
-- Custom CSS for UI/UX enhancements
-- Instructional design frameworks (UDL, scaffolded learning)
+![Quick Check Feedback](quick-check-feedback.png)
 
----
+> Real-time formative feedback reinforces understanding of prompt quality and AI bias.
 
-## 🎓 Design Approach
-
-This project integrates:
-
-- **Learning science principles** (scaffolding, feedback loops)
-- **Human risk awareness** (how people interact with AI systems)
-- **Inclusive design practices**
-- **Real-world application scenarios**
+Students receive instant feedback with explanations - supporting learning without needing instructor intervention.
 
 ---
 
-## 💼 Relevant Roles This Supports
+### 🔍 Compare AI Outputs
 
-- AI Governance / Human Risk
-- Security Awareness & Training
-- Instructional Design / Learning & Development
-- EdTech Product Design
-- AI Literacy & Responsible AI Initiatives
+![Compare AI Outputs](compare-ai-outputs.png)
 
----
+> Side-by-side comparison shows how inclusive, specific prompts produce more equitable AI outputs.
 
-## 👩‍💻 Author
+Users can clearly see the difference between:
 
-**Jennifer Nolan**  
-Learning & Development Leader | AI Literacy | Human-Centered Design  
-Developed May 2026
+* A vague, biased prompt
+* An improved, inclusive prompt
 
 ---
 
-## 💡 Key Insight
+### ♿ Accessibility & Display Supports
 
-AI does not "think" — it reflects patterns.
+![Display Supports](display-supports-accessibility.png)
 
-Helping users recognize and reshape those patterns is critical for building more equitable and effective AI systems.
+> Adjustable text size and background settings support accessibility and diverse learner needs.
+
+Features include:
+
+* Multiple text size options
+* Soft color backgrounds for readability
+* Clean, distraction-free interface
+
+---
+
+### ✏️ Active Learning (“Your Turn”)
+
+Users:
+
+* Identify types of bias (race, gender, access, etc.)
+* Explain their reasoning
+* Rewrite prompts to improve AI fairness
+
+---
+
+## 🛠️ Built With
+
+* **Python**
+* **Streamlit**
+* Custom CSS for accessibility and UI enhancements
+
+---
+
+## 🎯 Why This Matters
+
+AI tools are increasingly used in:
+
+* Education
+* Hiring
+* Content creation
+* Decision-making systems
+
+Without strong prompt design and critical thinking, AI can:
+
+* Reinforce stereotypes
+* Exclude perspectives
+* Produce incomplete or misleading outputs
+
+This tool helps learners **interact with AI thoughtfully, not passively**.
+
+---
+
+## 👩‍💻 About the Developer
+
+*Developed by Jennifer Nolan - May 2026*
+
+Experienced educator and instructional leader with a focus on:
+
+* AI literacy
+* Inclusive instruction
+* Human-centered technology use
+
+---
+
+## 📌 Use Cases
+
+* K–12 classrooms
+* Teacher professional development
+* AI literacy workshops
+* Digital citizenship lessons
+* EdTech demonstrations
+
+---
+
+## ⭐ What This Project Demonstrates
+
+* Instructional design for complex concepts
+* Human-centered AI education
+* Accessibility-aware UI design
+* Practical application of AI ethics concepts
+* Real-world classroom usability
