@@ -1042,21 +1042,6 @@ div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-te
     outline-offset: 3px !important;
 }}
 
-
-/* REMOVE BOXES AROUND DISPLAY SUPPORTS LABELS */
-div[data-testid="stExpander"] label > div {
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-
-/* QUICK CHECK STATE FIX (handled in Streamlit logic)
-Ensure each radio has a unique key like:
-st.radio("Question 1", options, key="q1")
-st.radio("Question 2", options, key="q2")
-st.radio("Question 3", options, key="q3")
-*/
-
 </style>
 """, unsafe_allow_html=True)
 
@@ -1378,22 +1363,7 @@ with col_support:
         '<style>'
         '.p-solid{fill:#3949ab;opacity:0.85;}'
         '.p-ghost{fill:none;stroke:#3949ab;stroke-width:1.5;stroke-dasharray:3,2;opacity:0.45;}'
-        '
-/* REMOVE BOXES AROUND DISPLAY SUPPORTS LABELS */
-div[data-testid="stExpander"] label > div {
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-
-/* QUICK CHECK STATE FIX (handled in Streamlit logic)
-Ensure each radio has a unique key like:
-st.radio("Question 1", options, key="q1")
-st.radio("Question 2", options, key="q2")
-st.radio("Question 3", options, key="q3")
-*/
-
-</style>'
+        '</style>'
         '</defs>'
         '<g class="p-solid">'
         '<circle cx="22" cy="16" r="7"/><rect x="15" y="25" width="14" height="18" rx="4"/>'
@@ -1932,22 +1902,7 @@ st.markdown(
         .qz-col-wrap { flex-direction: column !important; }
         .qz-col-divider { display: none !important; }
     }
-    
-/* REMOVE BOXES AROUND DISPLAY SUPPORTS LABELS */
-div[data-testid="stExpander"] label > div {
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-}
-
-/* QUICK CHECK STATE FIX (handled in Streamlit logic)
-Ensure each radio has a unique key like:
-st.radio("Question 1", options, key="q1")
-st.radio("Question 2", options, key="q2")
-st.radio("Question 3", options, key="q3")
-*/
-
-</style>""",
+    </style>""",
     unsafe_allow_html=True,
 )
 
