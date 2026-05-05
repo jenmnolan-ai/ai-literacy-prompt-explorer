@@ -359,9 +359,20 @@ ul[data-baseweb="menu"] {{
 }}
 
 ul[data-baseweb="menu"] li,
-ul[data-baseweb="menu"] li span,
-[data-baseweb="menu"] * {{
+ul[data-baseweb="menu"] li span {{
     background-color: #ffffff !important;
+    color: #111827 !important;
+}}
+
+ul[data-baseweb="menu"] li[aria-selected="true"],
+ul[data-baseweb="menu"] li:hover {{
+    background-color: #eef2f7 !important;
+    color: #111827 !important;
+}}
+
+ul[data-baseweb="menu"] li[aria-selected="true"] span,
+ul[data-baseweb="menu"] li:hover span {{
+    background-color: #eef2f7 !important;
     color: #111827 !important;
 }}
 
@@ -380,21 +391,18 @@ input::placeholder {{
     color: #6b7280 !important;
 }}
 
-/* Checkbox and radio areas stay transparent, but text stays readable */
-div[data-testid="stCheckbox"],
-div[data-testid="stCheckbox"] *,
-div[data-testid="stRadio"],
-div[data-testid="stRadio"] * {{
-    background-color: transparent !important;
+/* Checkbox and radio labels stay readable, but controls keep Streamlit's built-in clickable buttons. */
+div[data-testid="stCheckbox"] label,
+div[data-testid="stCheckbox"] p,
+div[data-testid="stRadio"] label,
+div[data-testid="stRadio"] p {{
     color: #111827 !important;
 }}
 
-/* Checkbox/radio control boxes should stay white inside the border */
-div[data-testid="stCheckbox"] span[data-baseweb="checkbox"] > div,
-div[data-testid="stCheckbox"] label span:first-child,
-div[data-testid="stRadio"] label span:first-child {{
-    background-color: #ffffff !important;
-    border-color: #64748b !important;
+/* Keep radio/checkbox circles visible instead of flattening them into plain text. */
+div[data-testid="stRadio"] input,
+div[data-testid="stCheckbox"] input {{
+    accent-color: #ff4b4b !important;
 }}
 
 /* Expanders such as Display Supports, Word Help, Teacher Tools */
