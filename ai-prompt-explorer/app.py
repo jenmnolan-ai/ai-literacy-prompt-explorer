@@ -732,7 +732,7 @@ with col_main:
     )
 
     st.markdown("")
-        from pathlib import Path
+    from pathlib import Path
 
     SCENARIOS_PATH = Path(__file__).parent / "data" / "scenarios.json"
 
