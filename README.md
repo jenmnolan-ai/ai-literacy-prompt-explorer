@@ -121,7 +121,7 @@ Learning & Development leader with 27+ years of experience, focused on:
 
 ## 📌 Use Cases
 
-* K–12 instruction
+* K-12 classrooms
 * Teacher professional development
 * AI literacy workshops
 * Digital citizenship and ethics lessons
@@ -148,5 +148,4 @@ This project reflects the ability to:
 * Design interactive, feedback-driven learning tools
 * Build accessible, user-centered applications
 * Align technical tools with instructional outcomes
-
----
+* Demonstrate awareness of accessibility compliance requirements (Section 508, WCAG) in digital tools
