@@ -620,6 +620,57 @@ div[data-testid="column"]:nth-child(2) > div {{
     opacity: 1 !important;
 }}
 
+
+/* ════════════════════════════════════════════
+   FINAL 508-FRIENDLY CONTROL STATES
+   Radio/checkbox controls stay white until selected; selected state is black, not red.
+   ════════════════════════════════════════════ */
+
+/* Remove red Streamlit/BaseWeb selected color fallback. */
+div[data-testid="stCheckbox"] input,
+div[data-testid="stRadio"] input {{
+    accent-color: #111827 !important;
+}}
+
+/* Unselected checkbox/radio controls stay white with a visible gray outline. */
+div[data-testid="stCheckbox"] label span:first-child,
+div[data-testid="stRadio"] label span:first-child {{
+    background-color: #ffffff !important;
+    border-color: #cfd4dc !important;
+    color: #111827 !important;
+}}
+
+div[data-testid="stCheckbox"] label span:first-child *,
+div[data-testid="stRadio"] label span:first-child * {{
+    background-color: transparent !important;
+    border-color: #cfd4dc !important;
+    color: #111827 !important;
+    fill: #111827 !important;
+}}
+
+/* Selected checkbox/radio controls turn black and keep the mark visible. */
+div[data-testid="stCheckbox"] label:has(input:checked) span:first-child,
+div[data-testid="stRadio"] label:has(input:checked) span:first-child {{
+    background-color: #111827 !important;
+    border-color: #111827 !important;
+    color: #ffffff !important;
+}}
+
+div[data-testid="stCheckbox"] label:has(input:checked) span:first-child *,
+div[data-testid="stRadio"] label:has(input:checked) span:first-child * {{
+    background-color: #111827 !important;
+    border-color: #111827 !important;
+    color: #ffffff !important;
+    fill: #ffffff !important;
+}}
+
+/* Keep keyboard focus visible without relying on red. */
+div[data-testid="stCheckbox"] label:focus-within span:first-child,
+div[data-testid="stRadio"] label:focus-within span:first-child {{
+    outline: 2px solid #111827 !important;
+    outline-offset: 2px !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
