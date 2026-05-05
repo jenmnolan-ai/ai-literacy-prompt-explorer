@@ -1042,6 +1042,85 @@ div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-te
     outline-offset: 3px !important;
 }}
 
+
+/* ════════════════════════════════════════════
+   FINAL PATCH: DISPLAY SUPPORT LABELS + QUICK CHECK SELECTED STATE
+   Only fixes:
+   1) removes boxes around "Text Size" and "Background"
+   2) keeps Quick Check answers visibly selected/highlighted
+   ════════════════════════════════════════════ */
+
+/* Remove accidental boxes around radio group labels like Text Size and Background */
+div[data-testid="stRadio"] > label,
+div[data-testid="stRadio"] > label *,
+div[data-testid="stRadio"] > label span,
+div[data-testid="stRadio"] > label span:first-child,
+div[data-testid="stRadio"] > label div,
+div[data-testid="stRadio"] > label p {{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}}
+
+/* Keep actual radio choices visually selected after clicking */
+div[data-testid="stRadio"] label:has(input[type="radio"]:checked) {{
+    background-color: #f3f4f6 !important;
+    border-radius: 8px !important;
+}}
+
+/* Make selected radio control white with black selected mark, never red */
+div[data-testid="stRadio"] input[type="radio"] {{
+    accent-color: #111827 !important;
+}}
+
+div[data-testid="stRadio"] input[type="radio"]:checked {{
+    background-color: #ffffff !important;
+    border-color: #111827 !important;
+}}
+
+div[data-testid="stRadio"] input[type="radio"]:checked::before {{
+    content: "" !important;
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 50% !important;
+    background-color: #111827 !important;
+    display: block !important;
+}}
+
+/* Display Supports choices remain checkbox-style, but labels stay unboxed */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label *,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label span:first-child {{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}}
+
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"] {{
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+    border: 3px solid #374151 !important;
+    accent-color: #111827 !important;
+}}
+
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]:checked {{
+    background-color: #ffffff !important;
+    border-color: #111827 !important;
+}}
+
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]:checked::before {{
+    content: "✓" !important;
+    color: #111827 !important;
+    background: transparent !important;
+    font-size: 16px !important;
+    line-height: 1 !important;
+    font-weight: 900 !important;
+    display: block !important;
+    transform: translateY(-1px) !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
