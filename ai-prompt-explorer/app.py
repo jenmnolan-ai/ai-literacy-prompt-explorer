@@ -610,7 +610,7 @@ div[data-testid="column"]:nth-child(2) > div {{
 
 /* Explicit right-column divider line.
    This uses an actual HTML div instead of relying on Streamlit's markdown hr rendering. */
-.right-panel-divider {
+.right-panel-divider {{
     display: block !important;
     width: 100% !important;
     height: 0 !important;
@@ -618,7 +618,7 @@ div[data-testid="column"]:nth-child(2) > div {{
     border-top: 1px solid #d9dee7 !important;
     margin: 1.6rem 0 1.35rem 0 !important;
     opacity: 1 !important;
-}
+}}
 
 </style>
 """, unsafe_allow_html=True)
