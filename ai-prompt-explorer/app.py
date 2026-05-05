@@ -491,7 +491,7 @@ with col_support:
     with st.expander("🧑‍🏫 Teacher Tools"):
         st.markdown("**Readability Analysis** *(not visible to students)*")
         # Load scenarios here for teacher panel (reuse after left col loads)
-        with open("data/scenarios.json") as f:
+        with open("ai-prompt-explorer/data/scenarios.json") as f:
             _scenarios = json.load(f)
         _scenario_names = [s["scenario"] for s in _scenarios]
         _teacher_choice = st.selectbox(
