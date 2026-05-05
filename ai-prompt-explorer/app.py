@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import textstat
 import re
+from pathlib import Path
 
 # ── Helpers ──────────────────────────────────────────────────────
 def tip(word, definition):
@@ -40,6 +41,19 @@ bg_color_map = {
     "Soft Cream": "#fff8e1",
 }
 
+
+
+@st.cache_data
+def load_scenarios():
+    """Load scenarios relative to this app file so Streamlit Cloud can find them."""
+    scenario_path = Path(__file__).parent / "data" / "scenarios.json"
+    with scenario_path.open("r", encoding="utf-8") as f:
+        return json.load(f)
+
+scenarios = load_scenarios()
+scenario_names = [s["scenario"] for s in scenarios]
+_total = len(scenarios)
+
 # ── Session state defaults ────────────────────────────────────────
 if "font_choice" not in st.session_state:
     st.session_state.font_choice = "Larger Text"
@@ -56,7 +70,7 @@ font_size = font_size_map[st.session_state.font_choice]
 bg_color  = bg_color_map[st.session_state.bg_choice]
 
 # ── Global CSS ────────────────────────────────────────────────────
-CSS_STYLING = f"""
+st.markdown(f"""
 <style>
 
 /* ════════════════════════════════════════════
@@ -303,8 +317,7 @@ div[data-testid="stMainBlockContainer"] > div > div > div[data-testid="column"]:
     }}
 }}
 </style>
-"""
-st.markdown(CSS_STYLING, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
 # ── Header ────────────────────────────────────────────────────────
 _network_svg = (
@@ -412,7 +425,6 @@ st.markdown(
 )
 
 # ── Progress tracker ───────────────────────────────────────────────
-_total = 12
 _explored = len(st.session_state.explored_scenarios)
 _checked  = len(st.session_state.checked_scenarios)
 _pct = int((_explored / _total) * 100)
@@ -431,82 +443,6 @@ st.markdown(
     </div>
     </div>""",
     unsafe_allow_html=True,
-)
-
-# ── Decorative SVGs (defined here to keep layout blocks clean) ────
-_SEE_DIFF_SVG = (
-    '<svg aria-label="A group of person silhouettes — some shown as solid shapes and some as dotted outlines, suggesting missing or overlooked people."'
-    ' role="img" viewBox="0 0 220 80" xmlns="http://www.w3.org/2000/svg"'
-    ' style="width:100%;max-width:260px;display:block;margin:0 auto 8px auto;">'
-    '<defs><style>'
-    '.p-solid{fill:#3949ab;opacity:0.85;}'
-    '.p-ghost{fill:none;stroke:#3949ab;stroke-width:1.5;stroke-dasharray:3,2;opacity:0.45;}'
-    '</style></defs>'
-    '<g class="p-solid">'
-    '<circle cx="22" cy="16" r="7"/><rect x="15" y="25" width="14" height="18" rx="4"/>'
-    '<circle cx="55" cy="16" r="7"/><rect x="48" y="25" width="14" height="18" rx="4"/>'
-    '<circle cx="110" cy="16" r="7"/><rect x="103" y="25" width="14" height="18" rx="4"/>'
-    '<circle cx="165" cy="16" r="7"/><rect x="158" y="25" width="14" height="18" rx="4"/>'
-    '</g>'
-    '<g class="p-ghost">'
-    '<circle cx="88" cy="16" r="7"/><rect x="81" y="25" width="14" height="18" rx="4"/>'
-    '<circle cx="143" cy="16" r="7"/><rect x="136" y="25" width="14" height="18" rx="4"/>'
-    '<circle cx="198" cy="16" r="7"/><rect x="191" y="25" width="14" height="18" rx="4"/>'
-    '</g>'
-    '<text x="110" y="62" text-anchor="middle" font-size="9" fill="#555" font-family="sans-serif">'
-    'Solid = included &nbsp;&nbsp; Dotted = often left out'
-    '</text>'
-    '<line x1="10" y1="68" x2="210" y2="68" stroke="#dde3ec" stroke-width="0.5"/>'
-    '<text x="110" y="78" text-anchor="middle" font-size="8.5" fill="#888" font-family="sans-serif">'
-    'Who might an AI trained on this group overlook?'
-    '</text>'
-    '</svg>'
-)
-
-_PROMPT_CLARITY_SVG = (
-    '<svg aria-hidden="true" focusable="false" '
-    'xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" '
-    'style="width:100%;max-width:260px;display:block;margin:4px auto 2px auto;">'
-    '<path stroke="#bccde6" stroke-width="1.4" fill="none" opacity="0.7" '
-    'd="M10,30 L52,15 L34,58 L84,42 L64,82 L108,68"/>'
-    '<path stroke="#bccde6" stroke-width="1.4" fill="none" opacity="0.7" '
-    'd="M18,102 L68,90 L46,132 L96,120 L74,160 L112,146"/>'
-    '<path stroke="#bccde6" stroke-width="1.4" fill="none" opacity="0.7" '
-    'd="M10,178 L50,166 L30,205 L82,198"/>'
-    '<line stroke="#c8d8ee" stroke-width="1.2" opacity="0.55" x1="66" y1="48" x2="22" y2="102"/>'
-    '<line stroke="#c8d8ee" stroke-width="1.2" opacity="0.55" x1="90" y1="94" x2="42" y2="152"/>'
-    '<circle fill="#adbfe0" opacity="0.65" cx="10"  cy="30"  r="2.5"/>'
-    '<circle fill="#adbfe0" opacity="0.65" cx="52"  cy="15"  r="2.5"/>'
-    '<circle fill="#adbfe0" opacity="0.65" cx="84"  cy="42"  r="2.5"/>'
-    '<circle fill="#adbfe0" opacity="0.65" cx="108" cy="68"  r="2.5"/>'
-    '<circle fill="#adbfe0" opacity="0.65" cx="18"  cy="102" r="2.5"/>'
-    '<circle fill="#adbfe0" opacity="0.65" cx="96"  cy="120" r="2.5"/>'
-    '<circle fill="#adbfe0" opacity="0.65" cx="112" cy="146" r="2.5"/>'
-    '<circle fill="#adbfe0" opacity="0.65" cx="82"  cy="198" r="2.5"/>'
-    '<circle fill="#adbfe0" opacity="0.55" cx="66"  cy="48"  r="2"/>'
-    '<circle fill="#adbfe0" opacity="0.55" cx="22"  cy="102" r="2"/>'
-    '<circle fill="#adbfe0" opacity="0.55" cx="90"  cy="94"  r="2"/>'
-    '<circle fill="#adbfe0" opacity="0.55" cx="42"  cy="152" r="2"/>'
-    '<line x1="130" y1="12" x2="130" y2="228" stroke="#d6e2f0" '
-    'stroke-width="1.5" stroke-dasharray="5,4"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="200" y1="22"  x2="172" y2="85"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="200" y1="22"  x2="228" y2="85"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="172" y1="85"  x2="152" y2="152"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="172" y1="85"  x2="200" y2="152"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="228" y1="85"  x2="200" y2="152"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="228" y1="85"  x2="248" y2="152"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="152" y1="152" x2="168" y2="218"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="248" y1="152" x2="232" y2="218"/>'
-    '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="168" y1="218" x2="232" y2="218"/>'
-    '<circle fill="#5c8fd4" opacity="0.9"  cx="200" cy="22"  r="5.5"/>'
-    '<circle fill="#6f9edc" opacity="0.88" cx="172" cy="85"  r="4"/>'
-    '<circle fill="#6f9edc" opacity="0.88" cx="228" cy="85"  r="4"/>'
-    '<circle fill="#8fb2e8" opacity="0.85" cx="152" cy="152" r="3.2"/>'
-    '<circle fill="#8fb2e8" opacity="0.85" cx="200" cy="152" r="3.2"/>'
-    '<circle fill="#8fb2e8" opacity="0.85" cx="248" cy="152" r="3.2"/>'
-    '<circle fill="#a5c4f0" opacity="0.82" cx="168" cy="218" r="2.5"/>'
-    '<circle fill="#a5c4f0" opacity="0.82" cx="232" cy="218" r="2.5"/>'
-    '</svg>'
 )
 
 # ── Two-column layout ─────────────────────────────────────────────
@@ -567,17 +503,13 @@ with col_support:
 
     with st.expander("🧑‍🏫 Teacher Tools"):
         st.markdown("**Readability Analysis** *(not visible to students)*")
-        # Load scenarios here for teacher panel (reuse after left col loads)
-        with open("data/scenarios.json") as f:
-            _scenarios = json.load(f)
-        _scenario_names = [s["scenario"] for s in _scenarios]
         _teacher_choice = st.selectbox(
             "Select scenario to analyse:",
-            _scenario_names,
+            scenario_names,
             key="teacher_scenario_select",
             label_visibility="collapsed",
         )
-        _selected = next(s for s in _scenarios if s["scenario"] == _teacher_choice)
+        _selected = next(s for s in scenarios if s["scenario"] == _teacher_choice)
         _combined = _selected["prompt"].rstrip(".") + ". " + _selected["issue"].rstrip(".") + "."
         _grade = textstat.flesch_kincaid_grade(_combined)
 
@@ -697,7 +629,37 @@ with col_support:
         'Look at this group of people. <strong>Who might be missing?</strong></p>',
         unsafe_allow_html=True,
     )
-    st.markdown(_SEE_DIFF_SVG, unsafe_allow_html=True)
+    st.markdown(
+        '<svg aria-label="A group of person silhouettes — some shown as solid shapes and some as dotted outlines, suggesting missing or overlooked people."'
+        ' role="img" viewBox="0 0 220 80" xmlns="http://www.w3.org/2000/svg"'
+        ' style="width:100%;max-width:260px;display:block;margin:0 auto 8px auto;">'
+        '<defs>'
+        '<style>'
+        '.p-solid{fill:#3949ab;opacity:0.85;}'
+        '.p-ghost{fill:none;stroke:#3949ab;stroke-width:1.5;stroke-dasharray:3,2;opacity:0.45;}'
+        '</style>'
+        '</defs>'
+        '<g class="p-solid">'
+        '<circle cx="22" cy="16" r="7"/><rect x="15" y="25" width="14" height="18" rx="4"/>'
+        '<circle cx="55" cy="16" r="7"/><rect x="48" y="25" width="14" height="18" rx="4"/>'
+        '<circle cx="110" cy="16" r="7"/><rect x="103" y="25" width="14" height="18" rx="4"/>'
+        '<circle cx="165" cy="16" r="7"/><rect x="158" y="25" width="14" height="18" rx="4"/>'
+        '</g>'
+        '<g class="p-ghost">'
+        '<circle cx="88" cy="16" r="7"/><rect x="81" y="25" width="14" height="18" rx="4"/>'
+        '<circle cx="143" cy="16" r="7"/><rect x="136" y="25" width="14" height="18" rx="4"/>'
+        '<circle cx="198" cy="16" r="7"/><rect x="191" y="25" width="14" height="18" rx="4"/>'
+        '</g>'
+        '<text x="110" y="62" text-anchor="middle" font-size="9" fill="#555" font-family="sans-serif">'
+        'Solid = included &nbsp;&nbsp; Dotted = often left out'
+        '</text>'
+        '<line x1="10" y1="68" x2="210" y2="68" stroke="#dde3ec" stroke-width="0.5"/>'
+        '<text x="110" y="78" text-anchor="middle" font-size="8.5" fill="#888" font-family="sans-serif">'
+        'Who might an AI trained on this group overlook?'
+        '</text>'
+        '</svg>',
+        unsafe_allow_html=True,
+    )
     st.markdown(
         '<div style="background:#f0f4ff;border-left:3px solid #3949ab;'
         'border-radius:6px;padding:8px 12px;font-size:0.84rem;color:#333;line-height:1.5;">'
@@ -709,7 +671,59 @@ with col_support:
 
     # ── Decorative: Vague Prompt vs Clear Prompt ─────────────────
     st.markdown("---")
-    st.markdown(_PROMPT_CLARITY_SVG, unsafe_allow_html=True)
+    st.markdown(
+        '<svg aria-hidden="true" focusable="false" '
+        'xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" '
+        'style="width:100%;max-width:260px;display:block;margin:4px auto 2px auto;">'
+
+        # ── Left: tangled lines = vague prompt ──
+        '<path stroke="#bccde6" stroke-width="1.4" fill="none" opacity="0.7" '
+        'd="M10,30 L52,15 L34,58 L84,42 L64,82 L108,68"/>'
+        '<path stroke="#bccde6" stroke-width="1.4" fill="none" opacity="0.7" '
+        'd="M18,102 L68,90 L46,132 L96,120 L74,160 L112,146"/>'
+        '<path stroke="#bccde6" stroke-width="1.4" fill="none" opacity="0.7" '
+        'd="M10,178 L50,166 L30,205 L82,198"/>'
+        '<line stroke="#c8d8ee" stroke-width="1.2" opacity="0.55" x1="66" y1="48" x2="22" y2="102"/>'
+        '<line stroke="#c8d8ee" stroke-width="1.2" opacity="0.55" x1="90" y1="94" x2="42" y2="152"/>'
+        '<circle fill="#adbfe0" opacity="0.65" cx="10"  cy="30"  r="2.5"/>'
+        '<circle fill="#adbfe0" opacity="0.65" cx="52"  cy="15"  r="2.5"/>'
+        '<circle fill="#adbfe0" opacity="0.65" cx="84"  cy="42"  r="2.5"/>'
+        '<circle fill="#adbfe0" opacity="0.65" cx="108" cy="68"  r="2.5"/>'
+        '<circle fill="#adbfe0" opacity="0.65" cx="18"  cy="102" r="2.5"/>'
+        '<circle fill="#adbfe0" opacity="0.65" cx="96"  cy="120" r="2.5"/>'
+        '<circle fill="#adbfe0" opacity="0.65" cx="112" cy="146" r="2.5"/>'
+        '<circle fill="#adbfe0" opacity="0.65" cx="82"  cy="198" r="2.5"/>'
+        '<circle fill="#adbfe0" opacity="0.55" cx="66"  cy="48"  r="2"/>'
+        '<circle fill="#adbfe0" opacity="0.55" cx="22"  cy="102" r="2"/>'
+        '<circle fill="#adbfe0" opacity="0.55" cx="90"  cy="94"  r="2"/>'
+        '<circle fill="#adbfe0" opacity="0.55" cx="42"  cy="152" r="2"/>'
+
+        # ── Divider ──
+        '<line x1="130" y1="12" x2="130" y2="228" stroke="#d6e2f0" '
+        'stroke-width="1.5" stroke-dasharray="5,4"/>'
+
+        # ── Right: clean hierarchy = clear prompt ──
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="200" y1="22"  x2="172" y2="85"/>'
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="200" y1="22"  x2="228" y2="85"/>'
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="172" y1="85"  x2="152" y2="152"/>'
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="172" y1="85"  x2="200" y2="152"/>'
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="228" y1="85"  x2="200" y2="152"/>'
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="228" y1="85"  x2="248" y2="152"/>'
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="152" y1="152" x2="168" y2="218"/>'
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="248" y1="152" x2="232" y2="218"/>'
+        '<line stroke="#7da4e0" stroke-width="1.5" opacity="0.85" x1="168" y1="218" x2="232" y2="218"/>'
+        '<circle fill="#5c8fd4" opacity="0.9"  cx="200" cy="22"  r="5.5"/>'
+        '<circle fill="#6f9edc" opacity="0.88" cx="172" cy="85"  r="4"/>'
+        '<circle fill="#6f9edc" opacity="0.88" cx="228" cy="85"  r="4"/>'
+        '<circle fill="#8fb2e8" opacity="0.85" cx="152" cy="152" r="3.2"/>'
+        '<circle fill="#8fb2e8" opacity="0.85" cx="200" cy="152" r="3.2"/>'
+        '<circle fill="#8fb2e8" opacity="0.85" cx="248" cy="152" r="3.2"/>'
+        '<circle fill="#a5c4f0" opacity="0.82" cx="168" cy="218" r="2.5"/>'
+        '<circle fill="#a5c4f0" opacity="0.82" cx="232" cy="218" r="2.5"/>'
+
+        '</svg>',
+        unsafe_allow_html=True,
+    )
 
 # ════════════════════════════════════════════
 # LEFT: Main Learning Content
@@ -829,15 +843,9 @@ with col_main:
         },
     }
 
-    # Load scenarios
-    with open("data/scenarios.json") as f:
-        scenarios = json.load(f)
-
-    scenario_names = [s["scenario"] for s in scenarios]
     choice = st.selectbox(
         "Choose a scenario:",
         scenario_names,
-        key="scenario_select",
         help="A scenario is a real-life situation. Pick one to explore how AI might respond to it."
     )
     selected = next(s for s in scenarios if s["scenario"] == choice)
@@ -1049,6 +1057,113 @@ with col_main:
         st.session_state.checked_scenarios.add(choice)
         st.session_state.explored_scenarios.add(choice)
         for msg in feedback:
+            st.markdown(msg)
+
+    # ── Improve the Prompt ────────────────────────────────────────
+    st.markdown("---")
+    st.markdown("### 📝 Improve the Prompt")
+    st.markdown("**How can you improve this prompt?** *(Choose all that apply)*")
+
+    imp_detail   = st.checkbox("Add more detail",                              key=f"imp_detail_{sk}")
+    imp_identity = st.checkbox("Include different identities or experiences",  key=f"imp_identity_{sk}")
+    imp_stereo   = st.checkbox("Avoid stereotypes",                            key=f"imp_stereo_{sk}")
+    imp_access   = st.checkbox("Include accessibility or different needs",     key=f"imp_access_{sk}")
+    imp_clear    = st.checkbox("Give clearer instructions to the AI",          key=f"imp_clear_{sk}")
+    imp_culture  = st.checkbox("Include different backgrounds or cultures",    key=f"imp_culture_{sk}")
+    imp_voice    = st.checkbox("Include student voice or choice",              key=f"imp_voice_{sk}")
+    imp_resources= st.checkbox("Consider access to resources",                 key=f"imp_resources_{sk}")
+
+    selected_strategies = [
+        label for checked, label in [
+            (imp_detail,    "Add more detail"),
+            (imp_identity,  "Include different identities or experiences"),
+            (imp_stereo,    "Avoid stereotypes"),
+            (imp_access,    "Include accessibility or different needs"),
+            (imp_clear,     "Give clearer instructions to the AI"),
+            (imp_culture,   "Include different backgrounds or cultures"),
+            (imp_voice,     "Include student voice or choice"),
+            (imp_resources, "Consider access to resources"),
+        ] if checked
+    ]
+
+    improved_prompt2 = st.text_area(
+        "Rewrite the prompt using at least one idea above.",
+        key=f"improve2_{sk}",
+        help="Use what you picked above to write a clearer, more inclusive prompt for the AI.",
+    )
+
+    if st.button("📝 Check My Prompt", key=f"check_prompt_{sk}"):
+        imp_feedback = []
+
+        # Strategy selection check
+        if not selected_strategies:
+            imp_feedback.append("🟡 Pick at least one strategy above to guide your revision.")
+        else:
+            imp_feedback.append(
+                f"🟢 Good choices! You are using these strategies: **{', '.join(selected_strategies)}**."
+            )
+
+        # Prompt rewrite check
+        rw2 = improved_prompt2.strip()
+        if rw2 == "":
+            imp_feedback.append("🟡 Try writing a revised prompt using the strategies you selected.")
+        else:
+            rw2_lower = rw2.lower()
+            rw2_words = set(rw2_lower.split())
+
+            signals2 = []
+
+            identity2 = {
+                "she", "her", "girl", "woman", "female", "he", "him", "boy", "man", "male",
+                "non-binary", "they", "disability", "disabled", "wheelchair", "blind", "deaf",
+                "neurodivergent", "autistic", "low-income", "rural", "urban", "immigrant",
+                "refugee", "bilingual", "multilingual", "culture", "cultural", "religion",
+                "religious", "body", "bodies", "size", "appearance", "identity", "expression",
+                "representation", "elderly", "older", "young", "age", "student", "students",
+            }
+            if identity2 & rw2_words:
+                signals2.append("representation")
+
+            stereo_phrases = [
+                "non-traditional", "any gender", "all abilities", "regardless",
+                "without assuming", "challenge", "subvert", "beyond", "not just",
+                "instead of", "variety", "diverse", "different kinds", "all types",
+                "all backgrounds", "every student", "different people", "different experiences",
+            ]
+            if any(ph in rw2_lower for ph in stereo_phrases):
+                signals2.append("stereotype-challenging")
+
+            orig_len = len(selected["prompt"].split())
+            if len(rw2.split()) >= orig_len + 5:
+                signals2.append("more specific")
+
+            inclusion2 = [
+                "all students", "every student", "inclusive", "include", "including",
+                "equitable", "fair to", "regardless of", "accessible", "accessibility",
+                "different needs", "different backgrounds", "different abilities",
+                "multiple", "variety of", "range of", "student voice", "student choice",
+                "access to", "resources",
+            ]
+            if any(ph in rw2_lower for ph in inclusion2):
+                signals2.append("inclusive language")
+
+            if len(signals2) >= 2:
+                imp_feedback.append(
+                    "🟢 Strong revision! You challenged a common assumption and gave the AI "
+                    "clearer, more specific directions. That leads to fairer and more useful results."
+                )
+            elif len(signals2) == 1:
+                imp_feedback.append(
+                    "🟢 Good work! Your revision shows real improvement. "
+                    "See if you can also name specific groups of people, needs, or contexts."
+                )
+            else:
+                imp_feedback.append(
+                    "🟡 You made a start! Try including more detail about different people, "
+                    "needs, or situations so the AI has clearer and fairer directions."
+                )
+
+        for msg in imp_feedback:
             st.markdown(msg)
 
     pass  # Quick Check and So What? rendered full-width below
