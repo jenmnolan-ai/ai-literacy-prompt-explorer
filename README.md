@@ -1,21 +1,27 @@
-## 🚀 AI Literacy Prompt Explorer
+# 🤖 AI Literacy Prompt Explorer
 
-🔗 Live App: https://ai-literacy-prompt-explorer-cdhba95yeweiq7mj8duryh.streamlit.app/
+🔗 **Live App:** https://ai-literacy-prompt-explorer-cdhba95yeweiq7mj8duryh.streamlit.app/
 
-An interactive learning tool designed to help students and educators explore how AI responses are shaped by prompts - and how bias, assumptions, and missing perspectives can influence outputs.
+<p align="center">
+  <img src="images/compare-ai-outputs.png" width="600"/>
+</p>
+
+<p align="center"><em>How prompt design shapes AI outcomes - and why it matters.</em></p>
 
 ---
 
 ## 💡 Overview
 
-The **AI Literacy Prompt Explorer** helps users:
+The **AI Literacy Prompt Explorer** is an interactive learning tool that helps students and educators explore how AI responses are shaped by prompts - and how bias, assumptions, and missing perspectives can influence outputs.
+
+This tool helps users:
 
 * Understand how prompt quality impacts AI responses
 * Identify bias and incomplete outputs
 * Practice improving prompts for fairness, specificity, and inclusion
 * Build critical thinking skills around AI-generated content
 
-This tool is designed for **classroom use, professional development, and digital literacy instruction**.
+Designed for **classroom use, professional development, AI literacy workshops, and digital citizenship instruction**.
 
 ---
 
@@ -34,34 +40,37 @@ Each scenario highlights how bias can emerge in AI outputs.
 
 ---
 
-### 🧪 Quick Check (Immediate Feedback)
+### 🧪 Quick Check with Immediate Feedback
 
-![Quick Check Feedback](quick-check-feedback.png)
+<p align="center">
+  <img src="images/quick-check-feedback.png" width="500"/>
+</p>
 
-> Real-time formative feedback reinforces understanding of prompt quality and AI bias.
+<p align="center"><em>Real-time formative feedback reinforces understanding of prompt quality and AI bias.</em></p>
 
-Students receive instant feedback with explanations - supporting learning without needing instructor intervention.
+Students receive instant feedback with explanations, supporting learning without requiring instructor intervention.
 
 ---
 
 ### 🔍 Compare AI Outputs
 
-![Compare AI Outputs](compare-ai-outputs.png)
+<p align="center">
+  <img src="images/compare-ai-outputs.png" width="560"/>
+</p>
 
-> Side-by-side comparison shows how inclusive, specific prompts produce more equitable AI outputs.
+<p align="center"><em>Side-by-side comparison shows how inclusive, specific prompts produce more equitable AI outputs.</em></p>
 
-Users can clearly see the difference between:
-
-* A vague, biased prompt
-* An improved, inclusive prompt
+Users can clearly see the difference between a vague, biased prompt and an improved, inclusive prompt.
 
 ---
 
 ### ♿ Accessibility & Display Supports
 
-![Display Supports](display-supports-accessibility.png)
+<p align="center">
+  <img src="images/display-supports-accessibility.png" width="400"/>
+</p>
 
-> Adjustable text size and background settings support accessibility and diverse learner needs.
+<p align="center"><em>Adjustable text size and background settings support accessibility and diverse learner needs.</em></p>
 
 Features include:
 
@@ -71,13 +80,13 @@ Features include:
 
 ---
 
-### ✏️ Active Learning (“Your Turn”)
+### ✏️ Active Learning: “Your Turn”
 
-Users:
+Users practice applying what they learn by:
 
-* Identify types of bias (race, gender, access, etc.)
-* Explain their reasoning
-* Rewrite prompts to improve AI fairness
+* Identifying types of bias, including race, gender, access, and accessibility
+* Explaining their reasoning
+* Rewriting prompts to improve AI fairness and clarity
 
 ---
 
@@ -85,18 +94,14 @@ Users:
 
 * **Python**
 * **Streamlit**
-* Custom CSS for accessibility and UI enhancements
+* **Custom CSS** for accessibility and UI enhancements
+* Instructional design principles grounded in inclusive learning
 
 ---
 
 ## 🎯 Why This Matters
 
-AI tools are increasingly used in:
-
-* Education
-* Hiring
-* Content creation
-* Decision-making systems
+AI tools are increasingly used in education, hiring, content creation, and decision-making systems.
 
 Without strong prompt design and critical thinking, AI can:
 
@@ -110,23 +115,26 @@ This tool helps learners **interact with AI thoughtfully, not passively**.
 
 ## 👩‍💻 About the Developer
 
-*Developed by Jennifer Nolan - May 2026*
+**Jennifer Nolan**
+*Developed May 2026*
 
-Experienced educator and instructional leader with a focus on:
+Experienced educator and instructional leader focused on:
 
 * AI literacy
 * Inclusive instruction
 * Human-centered technology use
+* Accessible learning design
 
 ---
 
 ## 📌 Use Cases
 
-* K–12 classrooms
+* K-12 classrooms
 * Teacher professional development
 * AI literacy workshops
 * Digital citizenship lessons
 * EdTech demonstrations
+* Learning and development portfolios
 
 ---
 
@@ -137,3 +145,4 @@ Experienced educator and instructional leader with a focus on:
 * Accessibility-aware UI design
 * Practical application of AI ethics concepts
 * Real-world classroom usability
+* Prompt engineering and AI literacy support
