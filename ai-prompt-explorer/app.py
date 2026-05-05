@@ -339,7 +339,7 @@ div[data-testid="stMainBlockContainer"] > div > div > div[data-testid="column"]:
 
 /* Selectbox closed field */
 div[data-baseweb="select"] > div {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
     border-color: #cbd5e1 !important;
 }}
@@ -354,13 +354,13 @@ div[data-baseweb="select"] input {{
 div[data-baseweb="popover"],
 div[data-baseweb="popover"] > div,
 ul[data-baseweb="menu"] {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
 }}
 
 ul[data-baseweb="menu"] li,
 ul[data-baseweb="menu"] li span {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
 }}
 
@@ -381,7 +381,7 @@ textarea,
 input,
 div[data-testid="stTextArea"] textarea,
 div[data-testid="stTextInput"] input {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
     border-color: #cbd5e1 !important;
 }}
@@ -408,7 +408,7 @@ div[data-testid="stCheckbox"] input {{
 /* Expanders such as Display Supports, Word Help, Teacher Tools */
 details,
 div[data-testid="stExpander"] {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     border: 1px solid #dde3ec !important;
     border-radius: 8px !important;
     color: #111827 !important;
@@ -418,7 +418,7 @@ details summary,
 details summary *,
 div[data-testid="stExpander"] summary,
 div[data-testid="stExpander"] summary * {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #2c3e50 !important;
 }}
 
@@ -433,7 +433,7 @@ div[data-baseweb="select"] svg {{
    ════════════════════════════════════════════ */
 
 div[data-testid="stButton"] button {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #2c3e50 !important;
     border: 1px solid #dde3ec !important;
     border-radius: 10px !important;
@@ -447,7 +447,7 @@ div[data-testid="stButton"] button:hover {{
 }}
 
 div[data-testid="stButton"] button:focus {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #2c3e50 !important;
     border-color: #94a3b8 !important;
     box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.20) !important;
@@ -465,14 +465,14 @@ div[data-baseweb="popover"] > div,
 div[data-baseweb="popover"] [role="listbox"],
 div[data-baseweb="popover"] ul,
 ul[data-baseweb="menu"] {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
 }}
 
 div[data-baseweb="popover"] [role="option"],
 div[data-baseweb="popover"] li,
 ul[data-baseweb="menu"] li {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
 }}
 
@@ -495,7 +495,7 @@ ul[data-baseweb="menu"] li:hover {{
 
 /* Closed selectbox field: white with dark text. */
 div[data-baseweb="select"] > div {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
     border-color: #cbd5e1 !important;
 }}
@@ -509,14 +509,14 @@ div[data-testid="stTextArea"] textarea,
 div[data-testid="stTextInput"] input,
 textarea,
 input[type="text"] {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
     border-color: #cbd5e1 !important;
 }}
 
 /* Buttons: white, readable, no red fill. */
 div[data-testid="stButton"] button {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
     border: 1px solid #d1d5db !important;
     border-radius: 10px !important;
@@ -532,7 +532,7 @@ div[data-testid="stButton"] button:hover {{
 
 div[data-testid="stButton"] button:focus,
 div[data-testid="stButton"] button:active {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     color: #111827 !important;
     border-color: #111827 !important;
     box-shadow: 0 0 0 2px rgba(17,24,39,0.15) !important;
@@ -547,7 +547,7 @@ div[data-testid="column"]:nth-child(2) hr {{
 
 div[data-testid="column"]:nth-child(2) details,
 div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     border: 1px solid #d9dee7 !important;
     border-radius: 10px !important;
     box-shadow: none !important;
@@ -555,7 +555,7 @@ div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] {{
 
 div[data-testid="column"]:nth-child(2) details summary,
 div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] summary {{
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
 }}
 
 
@@ -628,7 +628,7 @@ div[data-testid="stRadio"] input[type="radio"] {{
     min-width: 18px !important;
     border: 3px solid #374151 !important;
     border-radius: 50% !important;
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     margin-right: 8px !important;
     vertical-align: middle !important;
 }}
@@ -648,7 +648,7 @@ div[data-testid="stCheckbox"] input[type="checkbox"] {{
     min-width: 18px !important;
     border: 3px solid #374151 !important;
     border-radius: 4px !important;
-    background-color: #ffffff !important;
+    background-color: #111827 !important;
     margin-right: 8px !important;
     vertical-align: middle !important;
 }}
@@ -660,7 +660,7 @@ div[data-testid="stCheckbox"] input[type="checkbox"]:checked {{
 
 div[data-testid="stCheckbox"] input[type="checkbox"]:checked::after {{
     content: "✓";
-    color: #ffffff !important;
+    color: #111827 !important;
     font-size: 14px !important;
     line-height: 14px !important;
     font-weight: 800 !important;
