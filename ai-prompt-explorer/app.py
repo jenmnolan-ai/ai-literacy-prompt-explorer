@@ -732,6 +732,25 @@ with col_main:
     )
 
     st.markdown("")
+        from pathlib import Path
+
+    SCENARIOS_PATH = Path(__file__).parent / "data" / "scenarios.json"
+
+    with open(SCENARIOS_PATH, "r", encoding="utf-8") as f:
+        scenarios = json.load(f)
+
+    scenario_names = [s["scenario"] for s in scenarios]
+
+    choice = st.selectbox(
+        "Choose a scenario:",
+        scenario_names,
+        help="A scenario is a real-life situation. Pick one to explore how AI might respond to it."
+    )
+
+    selected = next(s for s in scenarios if s["scenario"] == choice)
+
+    st.markdown("### " + tip("Prompt", TIPS["prompt"]), unsafe_allow_html=True)
+    st.write(selected["prompt"])
 
     # ── "So What?" takeaways — one per scenario ──────────────────
     SO_WHAT = {
@@ -851,7 +870,7 @@ selected = next(s for s in scenarios if s["scenario"] == choice)
 
 
 
-    st.markdown("### " + tip("Prompt", TIPS["prompt"]), unsafe_allow_html=True)
+st.markdown("### " + tip("Prompt", TIPS["prompt"]), unsafe_allow_html=True)
     st.write(selected["prompt"])
 
     st.markdown("### Think About It")
