@@ -801,6 +801,152 @@ div[data-testid="stCheckbox"] label:focus-within {{
     outline-offset: 3px !important;
 }}
 
+
+/* ════════════════════════════════════════════
+   FINAL MODERN CONTROL FIX — WHITE BACKGROUND, BLACK SELECTED, NO RED
+   Applies only to Streamlit radio/checkbox controls.
+   Keeps Display Supports, Quick Check, and Your Turn controls consistent.
+   ════════════════════════════════════════════ */
+
+/* Remove red accent from actual native inputs. */
+div[data-testid="stRadio"] input,
+div[data-testid="stCheckbox"] input,
+div[data-testid="stRadio"] input[type="radio"],
+div[data-testid="stCheckbox"] input[type="checkbox"] {{
+    accent-color: #111827 !important;
+}}
+
+/* Keep option rows clean and modern. */
+div[data-testid="stRadio"] label:has(input),
+div[data-testid="stCheckbox"] label:has(input) {{
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 5px 6px !important;
+    border-radius: 8px !important;
+}}
+
+div[data-testid="stRadio"] label:has(input):hover,
+div[data-testid="stCheckbox"] label:has(input):hover {{
+    background-color: #f8fafc !important;
+}}
+
+/* Hide any old BaseWeb red/filled visual layers that are not the native input. */
+div[data-testid="stRadio"] label:has(input) > div:first-child,
+div[data-testid="stCheckbox"] label:has(input) > div:first-child {{
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+}}
+
+div[data-testid="stRadio"] label:has(input) > div:first-child *,
+div[data-testid="stCheckbox"] label:has(input) > div:first-child * {{
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+    color: #111827 !important;
+    fill: #111827 !important;
+}}
+
+/* Native radio: white interior, thick black border. */
+div[data-testid="stRadio"] input[type="radio"] {{
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 21px !important;
+    height: 21px !important;
+    min-width: 21px !important;
+    border: 3px solid #374151 !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    display: inline-grid !important;
+    place-content: center !important;
+    margin: 0 10px 0 0 !important;
+    box-shadow: none !important;
+}}
+
+/* Selected radio: white outer button with black center dot. */
+div[data-testid="stRadio"] input[type="radio"]:checked {{
+    background-color: #ffffff !important;
+    border-color: #111827 !important;
+    box-shadow: none !important;
+}}
+
+div[data-testid="stRadio"] input[type="radio"]:checked::before {{
+    content: "" !important;
+    width: 9px !important;
+    height: 9px !important;
+    border-radius: 50% !important;
+    background-color: #111827 !important;
+    display: block !important;
+}}
+
+/* Native checkbox: white interior, thick black border. */
+div[data-testid="stCheckbox"] input[type="checkbox"] {{
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 21px !important;
+    height: 21px !important;
+    min-width: 21px !important;
+    border: 3px solid #374151 !important;
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    display: inline-grid !important;
+    place-content: center !important;
+    margin: 0 10px 0 0 !important;
+    box-shadow: none !important;
+}}
+
+/* Selected checkbox: white button with black checkmark. */
+div[data-testid="stCheckbox"] input[type="checkbox"]:checked {{
+    background-color: #ffffff !important;
+    border-color: #111827 !important;
+    box-shadow: none !important;
+}}
+
+div[data-testid="stCheckbox"] input[type="checkbox"]:checked::before {{
+    content: "✓" !important;
+    color: #111827 !important;
+    font-size: 17px !important;
+    line-height: 1 !important;
+    font-weight: 900 !important;
+    display: block !important;
+    transform: translateY(-1px) !important;
+}}
+
+/* Strong final fallback for Streamlit/BaseWeb selected SVG marks: black only, never red. */
+div[data-testid="stRadio"] label:has(input:checked) svg,
+div[data-testid="stCheckbox"] label:has(input:checked) svg,
+div[data-testid="stRadio"] label:has(input:checked) [data-baseweb],
+div[data-testid="stCheckbox"] label:has(input:checked) [data-baseweb] {{
+    color: #111827 !important;
+    fill: #111827 !important;
+    background-color: transparent !important;
+    border-color: #111827 !important;
+}}
+
+/* Do not draw boxes around group labels like Text Size or Background. */
+div[data-testid="stRadio"] > label,
+div[data-testid="stCheckbox"] > label {{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}}
+
+/* Keyboard accessibility: visible, black focus ring on the actual control. */
+div[data-testid="stRadio"] input[type="radio"]:focus-visible,
+div[data-testid="stCheckbox"] input[type="checkbox"]:focus-visible {{
+    outline: 3px solid #111827 !important;
+    outline-offset: 3px !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
