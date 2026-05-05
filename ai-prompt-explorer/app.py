@@ -587,6 +587,27 @@ div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] summary {{
     background-color: #ffffff !important;
 }}
 
+
+
+/* ════════════════════════════════════════════
+   FINAL RIGHT-COLUMN DIVIDER + FOOTER POLISH
+   ════════════════════════════════════════════ */
+
+/* Make the right-column separator lines visible, clean, and consistent. */
+div[data-testid="column"]:nth-child(2) hr,
+div[data-testid="column"]:nth-child(2) div[data-testid="stMarkdown"] hr {{
+    border: none !important;
+    border-top: 1px solid #d1d5db !important;
+    margin: 1.65rem 0 1.45rem 0 !important;
+    width: 100% !important;
+    opacity: 1 !important;
+}}
+
+/* Keep right-column sections from visually running together. */
+div[data-testid="column"]:nth-child(2) > div {{
+    margin-bottom: 0.35rem !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -1664,3 +1685,11 @@ if sw:
         '</div>',
         unsafe_allow_html=True,
     )
+
+# ── Footer attribution ─────────────────────────────────────────────
+st.markdown(
+    '<p style="text-align:center; font-size:0.75rem; color:#111827; font-style:italic; margin-top:30px;">'
+    'Developed by Jennifer Nolan, May 2026'
+    '</p>',
+    unsafe_allow_html=True,
+)
