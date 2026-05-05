@@ -453,6 +453,140 @@ div[data-testid="stButton"] button:focus {{
     box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.20) !important;
 }}
 
+
+/* ════════════════════════════════════════════
+   FINAL VISUAL CLEANUP: WHITE CONTROLS + CLEAN RIGHT PANEL
+   Added after earlier Streamlit overrides so it wins safely.
+   ════════════════════════════════════════════ */
+
+/* Selectbox dropdown: keep the menu white, including selected and hover states. */
+div[data-baseweb="popover"],
+div[data-baseweb="popover"] > div,
+div[data-baseweb="popover"] [role="listbox"],
+div[data-baseweb="popover"] ul,
+ul[data-baseweb="menu"] {{
+    background-color: #ffffff !important;
+    color: #111827 !important;
+}}
+
+div[data-baseweb="popover"] [role="option"],
+div[data-baseweb="popover"] li,
+ul[data-baseweb="menu"] li {{
+    background-color: #ffffff !important;
+    color: #111827 !important;
+}}
+
+div[data-baseweb="popover"] [role="option"] *,
+div[data-baseweb="popover"] li *,
+ul[data-baseweb="menu"] li * {{
+    background-color: transparent !important;
+    color: #111827 !important;
+}}
+
+div[data-baseweb="popover"] [role="option"][aria-selected="true"],
+div[data-baseweb="popover"] [role="option"]:hover,
+div[data-baseweb="popover"] li[aria-selected="true"],
+div[data-baseweb="popover"] li:hover,
+ul[data-baseweb="menu"] li[aria-selected="true"],
+ul[data-baseweb="menu"] li:hover {{
+    background-color: #eef2f7 !important;
+    color: #111827 !important;
+}}
+
+/* Closed selectbox field: white with dark text. */
+div[data-baseweb="select"] > div {{
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border-color: #cbd5e1 !important;
+}}
+
+div[data-baseweb="select"] * {{
+    color: #111827 !important;
+}}
+
+/* Text boxes stay white on green/cream accessibility backgrounds. */
+div[data-testid="stTextArea"] textarea,
+div[data-testid="stTextInput"] input,
+textarea,
+input[type="text"] {{
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border-color: #cbd5e1 !important;
+}}
+
+/* Buttons: white, readable, no red fill. */
+div[data-testid="stButton"] button {{
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 10px !important;
+    font-weight: 600 !important;
+    box-shadow: none !important;
+}}
+
+div[data-testid="stButton"] button:hover {{
+    background-color: #f8fafc !important;
+    color: #111827 !important;
+    border-color: #94a3b8 !important;
+}}
+
+div[data-testid="stButton"] button:focus,
+div[data-testid="stButton"] button:active {{
+    background-color: #ffffff !important;
+    color: #111827 !important;
+    border-color: #111827 !important;
+    box-shadow: 0 0 0 2px rgba(17,24,39,0.15) !important;
+}}
+
+/* Checkbox/radio text: readable, but don't turn the whole row dark. */
+div[data-testid="stCheckbox"] label,
+div[data-testid="stCheckbox"] p,
+div[data-testid="stRadio"] label,
+div[data-testid="stRadio"] p {{
+    color: #111827 !important;
+    background-color: transparent !important;
+}}
+
+/* Native control fallback: black selected mark instead of red. */
+div[data-testid="stCheckbox"] input,
+div[data-testid="stRadio"] input {{
+    accent-color: #111827 !important;
+}}
+
+/* BaseWeb checkbox/radio visual control: white box/circle until selected. */
+div[data-testid="stCheckbox"] label span:first-child,
+div[data-testid="stRadio"] label span:first-child {{
+    background-color: #ffffff !important;
+    border-color: #cfd4dc !important;
+}}
+
+/* Selected controls: black mark/fill, not red. */
+div[data-testid="stCheckbox"] label span:first-child svg,
+div[data-testid="stRadio"] label span:first-child svg {{
+    color: #111827 !important;
+    fill: #111827 !important;
+}}
+
+/* Right panel: keep sections clean with subtle dividers. */
+div[data-testid="column"]:nth-child(2) hr {{
+    border: 0 !important;
+    border-top: 1px solid #d9dee7 !important;
+    margin: 1.35rem 0 1.2rem 0 !important;
+}}
+
+div[data-testid="column"]:nth-child(2) details,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] {{
+    background-color: #ffffff !important;
+    border: 1px solid #d9dee7 !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+}}
+
+div[data-testid="column"]:nth-child(2) details summary,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] summary {{
+    background-color: #ffffff !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
