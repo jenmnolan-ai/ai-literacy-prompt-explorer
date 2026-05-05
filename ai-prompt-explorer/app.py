@@ -871,7 +871,7 @@ selected = next(s for s in scenarios if s["scenario"] == choice)
 
 
 st.markdown("### " + tip("Prompt", TIPS["prompt"]), unsafe_allow_html=True)
-    st.write(selected["prompt"])
+st.write(selected["prompt"])
 
     st.markdown("### Think About It")
     st.markdown(
