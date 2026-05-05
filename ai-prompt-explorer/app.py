@@ -608,6 +608,18 @@ div[data-testid="column"]:nth-child(2) > div {{
     margin-bottom: 0.35rem !important;
 }}
 
+/* Explicit right-column divider line.
+   This uses an actual HTML div instead of relying on Streamlit's markdown hr rendering. */
+.right-panel-divider {
+    display: block !important;
+    width: 100% !important;
+    height: 0 !important;
+    border: 0 !important;
+    border-top: 1px solid #d9dee7 !important;
+    margin: 1.6rem 0 1.35rem 0 !important;
+    opacity: 1 !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
@@ -831,7 +843,7 @@ with col_support:
             st.write("No long words found.")
 
     # ── AI in the Real World ──────────────────────────────────────
-    st.markdown("---")
+    st.markdown('<div class="right-panel-divider"></div>', unsafe_allow_html=True)
     st.markdown("#### 🎬 AI in the Real World")
     st.markdown(
         '<p style="font-size:0.88rem;color:#555;margin:-4px 0 8px 0;">'
@@ -873,7 +885,7 @@ with col_support:
         )
 
     # ── Voices in AI ──────────────────────────────────────────────
-    st.markdown("---")
+    st.markdown('<div class="right-panel-divider"></div>', unsafe_allow_html=True)
     st.markdown("#### 💬 Voices in AI")
 
     _QUOTES = [
@@ -914,7 +926,7 @@ with col_support:
         st.rerun()
 
     # ── See It Differently ────────────────────────────────────────
-    st.markdown("---")
+    st.markdown('<div class="right-panel-divider"></div>', unsafe_allow_html=True)
     st.markdown("#### 👁️ See It Differently")
     st.markdown(
         '<p style="font-size:0.88rem;color:#555;margin:-4px 0 8px 0;line-height:1.4;">'
@@ -962,7 +974,7 @@ with col_support:
     )
 
     # ── Decorative: Vague Prompt vs Clear Prompt ─────────────────
-    st.markdown("---")
+    st.markdown('<div class="right-panel-divider"></div>', unsafe_allow_html=True)
     st.markdown(
         '<svg aria-hidden="true" focusable="false" '
         'xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 240" '
@@ -1688,7 +1700,7 @@ if sw:
 
 # ── Footer attribution ─────────────────────────────────────────────
 st.markdown(
-    '<p style="text-align:center; font-size:0.75rem; color:#111827; font-style:italic; margin-top:30px;">'
+    '<p style="text-align:center; font-size:0.75rem; color:#000000; font-style:italic; margin-top:30px;">'
     'Developed by Jennifer Nolan, May 2026'
     '</p>',
     unsafe_allow_html=True,
