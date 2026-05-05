@@ -1121,6 +1121,71 @@ div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-te
     transform: translateY(-1px) !important;
 }}
 
+
+/* ════════════════════════════════════════════
+   DISPLAY SUPPORTS CONSISTENCY FIX ONLY
+   Makes selected Text Size and Background choices use the same soft-fill style.
+   Removes the heavy focus/border outline from selected Display Supports choices.
+   Does not affect Quick Check or Your Turn.
+   ════════════════════════════════════════════ */
+
+/* Keep Display Supports group labels plain */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label *,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] > label p {{
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}}
+
+/* Display Supports options: clean text-pill style */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] label:has(input[type="radio"]) {{
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    padding: 6px 10px !important;
+    width: fit-content !important;
+}}
+
+/* Selected Display Supports option: consistent soft gray highlight */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] label:has(input[type="radio"]:checked) {{
+    background-color: #f3f4f6 !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}}
+
+/* Hide the radio/checkbox visual only inside Display Supports */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"] {{
+    position: absolute !important;
+    opacity: 0 !important;
+    width: 1px !important;
+    height: 1px !important;
+    min-width: 1px !important;
+    margin: 0 !important;
+    pointer-events: none !important;
+}}
+
+/* Remove any generated check/dot from Display Supports options */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]::before,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]::after,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]:checked::before,
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] input[type="radio"]:checked::after {{
+    content: none !important;
+    display: none !important;
+}}
+
+/* Keyboard focus stays accessible but uses a subtle ring matching the soft-pill style */
+div[data-testid="column"]:nth-child(2) div[data-testid="stExpander"] div[data-testid="stRadio"] label:has(input[type="radio"]:focus-visible) {{
+    outline: 2px solid #94a3b8 !important;
+    outline-offset: 2px !important;
+    box-shadow: none !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
