@@ -538,7 +538,7 @@ div[data-testid="stButton"] button:active {{
     box-shadow: 0 0 0 2px rgba(17,24,39,0.15) !important;
 }}
 
-* Right panel: keep sections clean with subtle dividers. */
+/* Right panel: keep sections clean with subtle dividers. */
 div[data-testid="column"]:nth-child(2) hr {{
     border: 0 !important;
     border-top: 1px solid #d9dee7 !important;
@@ -674,6 +674,132 @@ div[data-testid="stCheckbox"] input[type="checkbox"]:focus-visible {{
     outline: 2px solid #111827 !important;
     outline-offset: 3px !important;
 }}
+
+
+/* ════════════════════════════════════════════
+   FINAL CONTROL OVERRIDE — WHITE BACKGROUNDS, BLACK SELECTED STATE
+   Applies to Display Supports, Quick Check, Your Turn checkboxes/radios.
+   No red highlight. Checkboxes show a black checkmark when selected.
+   ════════════════════════════════════════════ */
+
+/* No red accent anywhere */
+div[data-testid="stRadio"] input,
+div[data-testid="stCheckbox"] input {
+    accent-color: #111827 !important;
+}
+
+/* Keep rows clean */
+div[data-testid="stRadio"] label,
+div[data-testid="stCheckbox"] label {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+div[data-testid="stRadio"] label:hover,
+div[data-testid="stCheckbox"] label:hover {
+    background-color: #f8fafc !important;
+    border-radius: 6px !important;
+}
+
+/* RADIO BUTTONS: white background, thick dark border */
+div[data-testid="stRadio"] input[type="radio"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    border: 3px solid #374151 !important;
+    border-radius: 50% !important;
+    background-color: #ffffff !important;
+    margin-right: 8px !important;
+    vertical-align: middle !important;
+    display: inline-grid !important;
+    place-content: center !important;
+}
+
+/* RADIO SELECTED: keep white background, show black center dot */
+div[data-testid="stRadio"] input[type="radio"]:checked {
+    background-color: #ffffff !important;
+    border-color: #111827 !important;
+    box-shadow: inset 0 0 0 5px #ffffff !important;
+}
+
+div[data-testid="stRadio"] input[type="radio"]:checked::before {
+    content: "" !important;
+    width: 8px !important;
+    height: 8px !important;
+    border-radius: 50% !important;
+    background-color: #111827 !important;
+    display: block !important;
+}
+
+/* CHECKBOXES: white background, thick dark border */
+div[data-testid="stCheckbox"] input[type="checkbox"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    border: 3px solid #374151 !important;
+    border-radius: 4px !important;
+    background-color: #ffffff !important;
+    margin-right: 8px !important;
+    vertical-align: middle !important;
+    display: inline-grid !important;
+    place-content: center !important;
+}
+
+/* CHECKBOX SELECTED: keep white background, show black checkmark */
+div[data-testid="stCheckbox"] input[type="checkbox"]:checked {
+    background-color: #ffffff !important;
+    border-color: #111827 !important;
+}
+
+div[data-testid="stCheckbox"] input[type="checkbox"]:checked::before {
+    content: "✓" !important;
+    color: #111827 !important;
+    font-size: 17px !important;
+    line-height: 1 !important;
+    font-weight: 900 !important;
+    display: block !important;
+    transform: translateY(-1px) !important;
+}
+
+/* BaseWeb fallback for Streamlit builds that wrap controls */
+div[data-testid="stRadio"] label span:first-child,
+div[data-testid="stCheckbox"] label span:first-child {
+    background-color: #ffffff !important;
+    border: 3px solid #374151 !important;
+    color: #111827 !important;
+}
+
+div[data-testid="stRadio"] label:has(input:checked) span:first-child,
+div[data-testid="stCheckbox"] label:has(input:checked) span:first-child {
+    background-color: #ffffff !important;
+    border-color: #111827 !important;
+    color: #111827 !important;
+    fill: #111827 !important;
+}
+
+/* Keep selected icons/checks black, never red/white fill */
+div[data-testid="stRadio"] label:has(input:checked) span:first-child *,
+div[data-testid="stCheckbox"] label:has(input:checked) span:first-child *,
+div[data-testid="stRadio"] label:has(input:checked) svg,
+div[data-testid="stCheckbox"] label:has(input:checked) svg {
+    color: #111827 !important;
+    fill: #111827 !important;
+    background-color: transparent !important;
+}
+
+/* Keyboard focus remains visible */
+div[data-testid="stRadio"] input[type="radio"]:focus-visible,
+div[data-testid="stCheckbox"] input[type="checkbox"]:focus-visible,
+div[data-testid="stRadio"] label:focus-within,
+div[data-testid="stCheckbox"] label:focus-within {
+    outline: 2px solid #111827 !important;
+    outline-offset: 3px !important;
+}
 
 </style>
 """, unsafe_allow_html=True)
